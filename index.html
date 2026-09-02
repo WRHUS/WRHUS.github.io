@@ -3,298 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حسين أحمد - الكاتب</title>
+    <title>حسين احمد | الموقع الرسمي</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* استيراد الخطوط العربية للحصول على مظهر مشابه */
-        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap');
-
-        :root {
-            --bg-dark: #121212;
-            --bg-very-dark: #0a0a0a;
-            --accent-gold: #c9a063; /* لون ذهبي للنصوص واللمسات */
-            --text-white: #ffffff;
-            --text-gray: #b0b0b0;
-            --btn-brown: #4a2c2a;
-            --shelf-brown: #3d2624;
+        /* إعدادات عامة */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Cairo', sans-serif; /* الخط الأساسي للنصوص */
-            background-color: var(--bg-dark);
-            color: var(--text-white);
-            line-height: 1.6;
+            font-family: 'Cairo', sans-serif;
+            background-color: #121418;
+            color: #ffffff;
             overflow-x: hidden;
         }
 
-        /* --- الهيدر (القائمة العلوية) --- */
+        /* شريط التنقل (Header) */
         header {
-            background-color: var(--bg-very-dark);
-            padding: 20px 80px;
+            background-color: #17181c;
+            padding: 20px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #333;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            border-bottom: 1px solid #2a2a2a;
         }
 
         .logo {
-            font-family: 'Amiri', serif; /* خط كلاسيكي للاسم */
-            color: var(--accent-gold);
-            font-size: 32px;
-            font-weight: bold;
+            font-size: 24px;
+            font-weight: 700;
+            color: #dcb37b;
             text-decoration: none;
             letter-spacing: 1px;
         }
 
         nav ul {
-            margin: 0;
-            padding: 0;
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 25px;
+            align-items: center;
         }
 
-        nav a {
+        nav ul li a {
             text-decoration: none;
-            color: var(--text-white);
-            font-weight: 600;
-            font-size: 16px;
+            color: #b0b0b0;
+            font-size: 15px;
             transition: color 0.3s ease;
         }
 
-        nav a:hover {
-            color: var(--accent-gold);
+        nav ul li a:hover, nav ul li a.active {
+            color: #dcb37b;
         }
 
-        /* --- القسم الرئيسي (Hero Section) --- */
+        .dropdown::after {
+            content: " ▼";
+            font-size: 10px;
+        }
+
+        /* القسم الرئيسي (Hero Section) */
         .hero {
             display: flex;
-            padding: 100px 80px;
+            justify-content: space-between;
             align-items: center;
-            gap: 60px;
-            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a1a 100%);
+            padding: 60px 10% 80px;
+            background: linear-gradient(135deg, #11141a 0%, #1e222b 100%);
+            position: relative;
+            min-height: 500px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
         }
 
         .hero-text {
-            flex: 1;
-            font-size: 19px;
-            color: var(--text-gray);
-            max-width: 650px;
+            width: 50%;
+            z-index: 2;
         }
 
-        .hero-btn {
+        .hero-text p {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #d8d8d8;
+            margin-bottom: 30px;
+            text-align: right;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .btn-primary {
             display: inline-block;
-            margin-top: 35px;
-            padding: 14px 35px;
-            background-color: var(--btn-brown);
-            color: var(--text-white);
+            background: linear-gradient(to bottom, #4a1515, #2d0d0d);
+            border: 1px solid #8b3a3a;
+            color: #ffffff;
+            padding: 10px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
             text-decoration: none;
-            border-radius: 4px;
-            border: 1px solid #633b38;
-            font-weight: bold;
-            font-size: 17px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            transition: all 0.3s ease;
         }
 
-        .hero-btn:hover {
-            background-color: #633b38;
+        .btn-primary:hover {
+            background: linear-gradient(to bottom, #5c1a1a, #3a1111);
             transform: translateY(-2px);
         }
 
-        .hero-book {
-            flex: 1;
+        .hero-image {
+            width: 40%;
             display: flex;
             justify-content: center;
+            z-index: 2;
+        }
+
+        /* إطار الكتاب الذهبي */
+        .book-frame {
+            border: 8px solid #2a1f16;
+            padding: 5px;
+            background-color: #111;
+            box-shadow: 0 0 0 2px #a67c52, 0 15px 40px rgba(0,0,0,0.8);
             position: relative;
         }
 
-        /* الإطار الذهبي حول الكتاب */
-        .book-frame {
-            border: 12px solid var(--accent-gold);
-            padding: 5px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-            background-color: #000;
-            transition: transform 0.3s ease;
-        }
-
-        .book-frame:hover {
-            transform: scale(1.03);
-        }
-
-        /* استخدام cover.jpg كغلاف للكتاب */
         .book-frame img {
-            max-width: 320px;
-            height: auto;
+            width: 250px;
+            height: 380px;
+            object-fit: cover;
             display: block;
         }
 
-        /* --- قسم أعمال قادمة --- */
-        .upcoming {
-            padding: 80px 80px;
+        /* قسم الأعمال القادمة (Upcoming Works) */
+        .upcoming-works {
+            background-color: #f7f7f7;
+            padding: 80px 10% 100px;
             text-align: center;
-            background-color: var(--bg-very-dark);
+            position: relative;
         }
 
-        .upcoming h2 {
-            font-size: 36px;
-            color: var(--text-white);
-            margin-bottom: 50px;
+        .upcoming-works h2 {
+            color: #4a1515;
+            font-size: 32px;
+            margin-bottom: 60px;
             font-weight: 700;
         }
 
-        .upcoming-books {
+        /* تصميم الرف والكتب */
+        .shelf-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .books-row {
             display: flex;
-            gap: 25px;
             justify-content: center;
-            margin-bottom: -15px; /* لتبدو الكتب فوق الرف */
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+            padding-bottom: 2px;
+        }
+
+        .blank-book {
+            width: 110px;
+            height: 160px;
+            background-color: #ffffff;
+            border-radius: 2px 4px 4px 2px;
+            box-shadow: inset 4px 0 10px rgba(0,0,0,0.05), -5px 5px 15px rgba(0,0,0,0.15);
+            border-left: 3px solid #eeeeee;
+        }
+
+        .shelf-board {
+            width: 100%;
+            height: 15px;
+            background: linear-gradient(to bottom, #c09b63, #a27c45);
             position: relative;
             z-index: 1;
         }
 
-        /* تمثيل الكتب البيضاء الفارغة */
-        .blank-book {
-            width: 130px;
-            height: 200px;
-            background-color: #f5f5f5;
-            border: 1px solid #e0e0e0;
-            box-shadow: 3px 3px 8px rgba(0,0,0,0.4);
-            transition: transform 0.2s ease;
-        }
-
-        .blank-book:hover {
-            transform: translateY(-5px);
-        }
-
-        .bookshelf-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 15px;
-        }
-
-        /* تنسيق الرف الخشبي */
-        .bookshelf {
-            background-color: var(--shelf-brown);
-            height: 25px;
+        .shelf-board::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
             width: 100%;
-            max-width: 900px;
-            border-radius: 2px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            height: 25px;
+            background: linear-gradient(to bottom, #5c442c, #3a2a1a);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.3);
         }
 
-        /* --- قسم من أنا (الخلفية الرخامية) --- */
-        .about {
-            /* محاكاة خلفية رخامية داكنة بلمسات ذهبية */
-            background-image: 
-                linear-gradient(135deg, rgba(18,18,18,0.95) 0%, rgba(0,0,0,0.98) 100%),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><defs><linearGradient id="marble" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23333;stop-opacity:0.1" /><stop offset="100%" style="stop-color:%23c9a063;stop-opacity:0.05" /></linearGradient></defs><rect width="400" height="400" fill="url(%23marble)"/><path d="M0,0 Q200,200 400,0 T0,400" stroke="%23c9a063" stroke-width="0.5" fill="none" opacity="0.1"/><path d="M400,400 Q200,200 0,400 T400,0" stroke="%23333" stroke-width="0.5" fill="none" opacity="0.1"/></svg>');
-            background-color: #000;
-            padding: 100px 80px;
+        /* قسم حول الكاتب (About Section) */
+        .about-section {
             display: flex;
-            gap: 70px;
-            align-items: center;
-            border-top: 1px solid #333;
+            background: #1c1e24; /* لون مقارب للرخام الداكن */
+            background-image: linear-gradient(45deg, #16181d 25%, transparent 25%, transparent 75%, #16181d 75%, #16181d), 
+                              linear-gradient(45deg, #16181d 25%, transparent 25%, transparent 75%, #16181d 75%, #16181d);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            padding: 0;
+            align-items: stretch;
+            min-height: 400px;
         }
 
-        .about-profile {
-            flex: 1;
-            display: flex;
-            justify-content: center;
+        .about-image {
+            width: 40%;
+            position: relative;
         }
 
-        /* استخدام profile.jpg كصورة شخصية */
-        .about-profile img {
-            width: 320px;
-            height: 450px;
+        .about-image img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border: 3px solid #222;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            filter: grayscale(100%) contrast(1.1); /* تأثير الأبيض والأسود */
+            display: block;
         }
 
         .about-content {
-            flex: 2;
+            width: 60%;
+            padding: 60px 8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        /* الاسم بخط خطي ذهبي كبير */
-        .signature-name {
-            font-family: 'Amiri', serif;
-            color: var(--accent-gold);
-            font-size: 64px;
-            font-weight: bold;
-            margin: 0 0 25px 0;
-            line-height: 1.1;
-            letter-spacing: 1px;
+        .calligraphy-name {
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 65px;
+            color: #dcb37b;
+            margin-bottom: 20px;
+            font-weight: normal;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1;
         }
 
-        .bio-text {
-            color: var(--text-gray);
+        .about-content p {
             font-size: 18px;
-            max-width: 750px;
-        }
-
-        .bio-text p {
-            margin: 0 0 15px 0;
-        }
-
-        /* --- التذيل (Footer) --- */
-        footer {
-            background-color: var(--bg-very-dark);
-            padding: 40px;
-            text-align: center;
-            border-top: 1px solid #333;
-        }
-
-        .footer-credits {
-            color: #777;
-            font-size: 15px;
+            line-height: 1.9;
+            color: #cccccc;
             margin-bottom: 15px;
-            font-weight: 600;
         }
 
-        .footer-icon {
-            color: var(--accent-gold);
-            font-size: 24px;
-            opacity: 0.8;
+        /* التذييل (Footer) */
+        footer {
+            background-color: #0a0b0d;
+            padding: 30px 20px;
+            text-align: center;
+            color: #777777;
+            font-size: 14px;
         }
 
-        /* --- التجاوب مع الشاشات الصغيرة (Mobile Friendly) --- */
-        @media (max-width: 1024px) {
-            header, .hero, .about {
-                padding: 40px 40px;
-            }
-            .hero, .about {
+        .footer-ornament {
+            margin-top: 10px;
+            color: #dcb37b;
+            font-size: 12px;
+        }
+
+        /* التجاوب مع الشاشات الصغيرة (Responsive) */
+        @media (max-width: 900px) {
+            .hero, .about-section {
                 flex-direction: column;
                 text-align: center;
-                gap: 40px;
+                padding: 40px 5%;
             }
-            .hero-text, .bio-text {
-                max-width: 100%;
+            .hero-text, .hero-image, .about-image, .about-content {
+                width: 100%;
             }
-            .upcoming-books {
-                flex-wrap: wrap;
+            .hero-text p {
+                text-align: center;
             }
-            .signature-name {
-                font-size: 48px;
+            .hero-image {
+                margin-top: 40px;
             }
-        }
-
-        @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                padding: 20px;
+                gap: 15px;
             }
             nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 15px;
-                margin-top: 15px;
             }
-            .book-frame img, .about-profile img {
-                max-width: 100%;
-                width: auto;
+            .books-row {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .blank-book {
+                width: 80px;
+                height: 120px;
+            }
+            .calligraphy-name {
+                font-size: 50px;
+                text-align: center;
+            }
+            .about-content p {
+                text-align: center;
             }
         }
     </style>
@@ -302,12 +310,12 @@
 <body>
 
     <header>
-        <a href="#" class="logo">حسين أحمد</a>
+        <a href="#" class="logo">حسين احمد</a>
         <nav>
             <ul>
-                <li><a href="#">الصفحة الرئيسية</a></li>
-                <li><a href="#">الأعمال</a></li>
-                <li><a href="#">حول حسين أحمد</a></li>
+                <li><a href="#" class="active">الصفحة الرئيسية</a></li>
+                <li><a href="#" class="dropdown">الأعمال</a></li>
+                <li><a href="#">حول حسين احمد</a></li>
                 <li><a href="#">مقالات</a></li>
                 <li><a href="#">أخبار وعروض</a></li>
                 <li><a href="#">اتصال</a></li>
@@ -317,45 +325,47 @@
 
     <section class="hero">
         <div class="hero-text">
-            <p>عقب رحيل شخصية سياسية ثقيلة إثر جراحة ناجحة، تتحول أروقة الشفاء إلى مسرح لتصفية الحسابات بين تقارير تحذف وشائعات تصنع للإعلام وتهم معدة مسبقاً، يجد جراح بين جدران الخداع ويواجه عقوبة الإعدام لجريمة دولية.</p>
-            <a href="#" class="hero-btn">نبذة عن الرواية</a>
+            <p>عقب رحيل شخصية سياسية ثقيلة إثر جراحة ناجحة.<br>
+            تتحول أروقة الشفاء إلى مسرح لتصفية الحسابات بين تقارير<br>
+            تحذف وشائعات تصنع للإعلام وتهم معدة مسبقاً. يجد جراح<br>
+            بين جدران الخداع ويواجه عقوبة الإعدام لجريمة دولية.</p>
+            <a href="#" class="btn-primary">نبذة عن الرواية</a>
         </div>
-        <div class="hero-book">
+        <div class="hero-image">
             <div class="book-frame">
-                <img src="cover.jpg" alt="غلاف رواية حسين أحمد">
+                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=600&auto=format&fit=crop" alt="غلاف رواية إنعاش متهم">
             </div>
         </div>
     </section>
 
-    <section class="upcoming">
+    <section class="upcoming-works">
         <h2>أعمال قادمة</h2>
-        <div class="upcoming-books">
-            <div class="blank-book"></div>
-            <div class="blank-book"></div>
-            <div class="blank-book"></div>
-            <div class="blank-book"></div>
-        </div>
-        <div class="bookshelf-container">
-            <div class="bookshelf"></div>
+        <div class="shelf-container">
+            <div class="books-row">
+                <div class="blank-book"></div>
+                <div class="blank-book"></div>
+                <div class="blank-book"></div>
+                <div class="blank-book"></div>
+            </div>
+            <div class="shelf-board"></div>
         </div>
     </section>
 
-    <section class="about">
-        <div class="about-profile">
-            <img src="profile.jpg" alt="الكاتب حسين أحمد">
+    <section class="about-section">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&auto=format&fit=crop" alt="صورة الكاتب حسين احمد">
         </div>
         <div class="about-content">
-            <h1 class="signature-name">حسين أحمد</h1>
-            <div class="bio-text">
-                <p>كاتب عراقي ناشئ وطالب جامعي في قسم التمريض من بغداد.</p>
-                <p>شخصياً، أهوى الأعمال الفنية القصصية ذات طابع سينمائي وملحمي مثير، حالياً أقوم بتأليف أعمال قصصية روائية وأهتم بتطوير أسلوب سردي وتقديم لون معاصر وجاد بالطرح.</p>
-            </div>
+            <h2 class="calligraphy-name">حُسَيْن اَحْمَد</h2>
+            <p>كاتب عراقي ناشئ وطالب جامعي في قسم التمريض من بغداد.</p>
+            <p>شخصياً، أهوى اعمال الفنية القصصية ذات طابع سينمائي وملحمي مثير، حالياً اقوم بتأليف أعمال قصصية روائية واهتم بتطوير أسلوب سردي وتقديم لون معاصر وجاد بالطرح.</p>
         </div>
     </section>
 
     <footer>
-        <div class="footer-credits">حسين أحمد &copy; 2026</div>
-        <div class="footer-icon">&#10023;</div> </footer>
+        <p>حسين احمد &copy; 2026</p>
+        <div class="footer-ornament">❖</div>
+    </footer>
 
 </body>
 </html>
