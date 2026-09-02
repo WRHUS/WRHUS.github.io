@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حسين أحمد | كاتب وروائي</title>
-    <!-- استدعاء خطوط عربية أدبية احترافية -->
+    <title>حسين أحمد | الصفحة الرئيسية</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Readex+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Readex+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-dark: #121212;
-            --bg-paper: #f9f6f0;
+            --bg-main: #1a1a1a;
+            --bg-card: #111111;
             --text-gold: #d4af37;
-            --text-dark: #2b2b2b;
-            --accent-teal: #008080;
-            --accent-purple: #2a1b3d;
+            --text-light: #e5e5e5;
+            --font-calligraphy: 'Aref Ruqaa', serif;
             --font-heading: 'Amiri', serif;
             --font-body: 'Readex Pro', sans-serif;
         }
@@ -28,20 +26,21 @@
         }
 
         body {
-            background-color: var(--bg-paper);
-            color: var(--text-dark);
+            background-color: var(--bg-main);
+            color: var(--text-light);
             font-family: var(--font-body);
             line-height: 1.8;
+            overflow-x: hidden;
         }
 
-        /* الهيدر */
+        /* Header */
         header {
-            background-color: var(--bg-dark);
-            padding: 1.2rem 2rem;
+            background-color: #0f0f0f;
+            padding: 1.2rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -51,62 +50,221 @@
             font-family: var(--font-heading);
             font-size: 1.8rem;
             color: var(--text-gold);
-            font-weight: bold;
             text-decoration: none;
+            font-weight: bold;
         }
 
         nav a {
-            color: #ffffff;
+            color: #b0b0b0;
             text-decoration: none;
-            margin-right: 1.5rem;
-            font-size: 0.95rem;
+            margin-right: 1.8rem;
+            font-size: 0.9rem;
             transition: color 0.3s;
         }
 
-        nav a:hover {
+        nav a:hover, nav a.active {
             color: var(--text-gold);
         }
 
         /* Hero Section */
-        .hero {
-            background-color: var(--bg-dark);
-            color: #ffffff;
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5rem 8%;
+            min-height: 80vh;
+            background: linear-gradient(135deg, #1f1f1f 0%, #111111 100%);
+            position: relative;
+        }
+
+        .hero-text {
+            max-width: 500px;
+        }
+
+        .hero-text p {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            color: #d1d1d1;
+            margin-bottom: 2rem;
+            line-height: 2;
+        }
+
+        .btn-outline-gold {
+            display: inline-block;
+            padding: 0.6rem 2rem;
+            border: 1px solid var(--text-gold);
+            color: var(--text-gold);
+            text-decoration: none;
+            border-radius: 4px;
+            background: rgba(212, 175, 55, 0.05);
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-gold:hover {
+            background: var(--text-gold);
+            color: #000;
+        }
+
+        .hero-image-frame {
+            position: relative;
+            padding: 12px;
+            border: 2px solid var(--text-gold);
+            background-color: #0d0d0d;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+        }
+
+        .hero-image-frame img {
+            width: 260px;
+            display: block;
+        }
+
+        /* Upcoming Books Section */
+        .upcoming-section {
             padding: 4rem 2rem;
             text-align: center;
-            border-bottom: 2px solid var(--text-gold);
+            background-color: #161616;
         }
 
-        .hero h1 {
+        .section-title {
             font-family: var(--font-heading);
-            font-size: 3rem;
-            color: var(--text-gold);
-            margin-bottom: 0.5rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #cccccc;
-            margin-bottom: 1.8rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.7rem 1.8rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: opacity 0.3s;
-        }
-
-        .btn-teal {
-            background-color: var(--accent-teal);
+            font-size: 2.2rem;
             color: #ffffff;
+            margin-bottom: 3rem;
         }
 
-        .btn-gold {
-            background-color: var(--text-gold);
-            color: var(--bg-dark);
+        .shelf-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
         }
+
+        .book-placeholder {
+            width: 120px;
+            height: 170px;
+            background: #e0e0e0;
+            border-radius: 2px;
+            box-shadow: -5px 5px 15px rgba(0,0,0,0.4);
+        }
+
+        .shelf-wood {
+            height: 20px;
+            background: linear-gradient(to bottom, #8a7352, #5c4a32);
+            max-width: 860px;
+            margin: 0 auto;
+            border-radius: 3px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+        }
+
+        /* About Author Section */
+        .about-section {
+            padding: 5rem 8%;
+            background: radial-gradient(circle, #22252a 0%, #0d0e10 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .author-img {
+            width: 280px;
+            filter: grayscale(100%);
+            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .about-content {
+            max-width: 500px;
+        }
+
+        .author-name-calligraphy {
+            font-family: var(--font-calligraphy);
+            font-size: 3.5rem;
+            color: var(--text-gold);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .about-content p {
+            font-size: 1rem;
+            color: #cccccc;
+            margin-bottom: 0.8rem;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+            color: #666;
+            border-top: 1px solid #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر -->
+    <header>
+        <a href="#" class="logo">حسين احمد</a>
+        <nav>
+            <a href="#" class="active">الصفحة الرئيسية</a>
+            <a href="#">الأعمال</a>
+            <a href="#">حول حسين احمد</a>
+            <a href="#">مقالات</a>
+            <a href="#">أخبار وعروض</a>
+            <a href="#">اتصال</a>
+        </nav>
+    </header>
+
+    <!-- قسم الرواية الرئيسية HERO -->
+    <section class="hero-section">
+        <div class="hero-text">
+            <p>عقب رحيل شخصية سياسية ثقيلة إثر جراحة ناجحة، تتحول أروقة الشفاء إلى مسرح لتصفية الحسابات بين تقارير تحذف وشائعات تصنع للإعلام وتهم أعدت مسبقاً. يجد جراح أجنبي ببين جدران الخداع ويواجه عقوبة الإعدام لجريمة دولية.</p>
+            <a href="#" class="btn-outline-gold">نبذة عن الرواية</a>
+        </div>
+        <div class="hero-image-frame">
+            <!-- استبدل الرابط أدناه برابط غلاف روايتك عند رفعه -->
+            <img src="https://via.placeholder.com/260x380/111/d4af37?text=إنعاش+متهم" alt="إنعاش متهم">
+        </div>
+    </section>
+
+    <!-- قسم أعمال قادمة -->
+    <section class="upcoming-section">
+        <h2 class="section-title">أعمال قادمة</h2>
+        <div class="shelf-container">
+            <div class="book-placeholder"></div>
+            <div class="book-placeholder"></div>
+            <div class="book-placeholder"></div>
+            <div class="book-placeholder"></div>
+        </div>
+        <div class="shelf-wood"></div>
+    </section>
+
+    <!-- قسم عن الكاتب -->
+    <section class="about-section">
+        <!-- استبدل الرابط أدناه بصورتك الشخصية عند رفعها -->
+        <img src="https://via.placeholder.com/280x350/222/fff?text=Hussein+Ahmed" alt="حسين أحمد" class="author-img">
+        
+        <div class="about-content">
+            <h1 class="author-name-calligraphy">حُسَيْن أَحْمَد</h1>
+            <p>كاتب عراقي ناشئ وطالب جامعي في قسم التمريض من بغداد.</p>
+            <p>شخصياً، أهوى الأعمال الفنية القصصية ذات طابع سينمائي وملحمي مثير، حالياً اقوم بتأليف أعمال قصصية روائية وأهتم بتطوير أسلوب سردي وتقديم بلون معاصر وجاد بالطرح.</p>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>حسين احمد © 2026</p>
+    </footer>
+
+</body>
+</html>
 
         .btn:hover {
             opacity: 0.85;
