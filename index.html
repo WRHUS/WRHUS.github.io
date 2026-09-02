@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حسين أحمد | الصفحة الرئيسية</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Readex+Pro:wght@300;400;600&display=swap" rel="stylesheet">
-    
+    <title>حسين احمد - كاتب وروائي</title>
     <style>
+        /* 
+         * Global Styles & Constraints 
+         * Applying 900 font-weight and a stack of programming fonts
+         */
         :root {
-            --bg-main: #1a1a1a;
-            --bg-card: #111111;
-            --text-gold: #d4af37;
-            --text-light: #e5e5e5;
-            --font-calligraphy: 'Aref Ruqaa', serif;
-            --font-heading: 'Amiri', serif;
-            --font-body: 'Readex Pro', sans-serif;
+            --dark-bg: #1e1e24;
+            --darker-bg: #141418;
+            --light-bg: #f9f9fb;
+            --gold: #c5a059;
+            --maroon: #5a111a;
+            --text-light: #e0e0e0;
+            --text-dark: #222;
         }
 
         * {
@@ -26,401 +26,307 @@
         }
 
         body {
-            background-color: var(--bg-main);
+            /* Programming fonts with 900 weight */
+            font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', 'Courier New', monospace, sans-serif;
+            font-weight: 900;
+            background-color: var(--dark-bg);
             color: var(--text-light);
-            font-family: var(--font-body);
             line-height: 1.8;
             overflow-x: hidden;
         }
 
-        /* Header */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- Header / Navbar --- */
         header {
-            background-color: #0f0f0f;
-            padding: 1.2rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            padding: 20px 5%;
+            background-color: #1a1a1f;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            /* Force LTR display for correct visual alignment of logo on left, nav on right */
+            direction: ltr; 
         }
 
         .logo {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            color: var(--text-gold);
-            text-decoration: none;
-            font-weight: bold;
+            font-size: 1.5rem;
+            color: #fff;
+            letter-spacing: 1px;
         }
 
-        nav a {
-            color: #b0b0b0;
-            text-decoration: none;
-            margin-right: 1.8rem;
-            font-size: 0.9rem;
-            transition: color 0.3s;
+        nav {
+            direction: rtl; /* Switch back for reading Arabic menu items */
         }
 
-        nav a:hover, nav a.active {
-            color: var(--text-gold);
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
         }
 
-        /* Hero Section */
+        nav ul li {
+            font-size: 0.85rem;
+            color: #aaa;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        nav ul li:hover, nav ul li.active {
+            color: #fff;
+        }
+
+        .dropdown::after {
+            content: ' ▼';
+            font-size: 0.6rem;
+            vertical-align: middle;
+        }
+
+        /* --- Hero Section --- */
         .hero-section {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 5rem 8%;
-            min-height: 80vh;
-            background: linear-gradient(135deg, #1f1f1f 0%, #111111 100%);
+            padding: 80px 8%;
+            background: linear-gradient(135deg, #1b1d22 0%, #292b33 100%);
             position: relative;
-            flex-wrap: wrap;
-            gap: 2rem;
+            direction: ltr; /* Keeps text left, image right */
         }
 
         .hero-text {
-            max-width: 500px;
+            width: 45%;
+            direction: rtl;
+            text-align: right;
         }
 
         .hero-text p {
-            font-family: var(--font-heading);
-            font-size: 1.35rem;
-            color: #d1d1d1;
-            margin-bottom: 2rem;
-            line-height: 2;
+            font-size: 1.1rem;
+            color: #cccccc;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
-        .btn-outline-gold {
-            display: inline-block;
-            padding: 0.6rem 2rem;
-            border: 1px solid var(--text-gold);
-            color: var(--text-gold);
-            text-decoration: none;
+        .btn-primary {
+            background-color: var(--maroon);
+            color: #fff;
+            border: 2px solid var(--gold);
+            padding: 10px 25px;
+            font-size: 0.9rem;
             border-radius: 4px;
-            background: rgba(212, 175, 55, 0.05);
-            font-size: 0.95rem;
-            transition: all 0.3s;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 900;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: background 0.3s;
         }
 
-        .btn-outline-gold:hover {
-            background: var(--text-gold);
-            color: #000;
+        .btn-primary:hover {
+            background-color: #7a1723;
         }
 
-        .hero-image-frame {
-            position: relative;
-            padding: 12px;
-            border: 2px solid var(--text-gold);
-            background-color: #0d0d0d;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-            margin: 0 auto;
-        }
-
-        .hero-image-frame img {
-            width: 260px;
-            display: block;
-        }
-
-        /* Upcoming Books Section */
-        .upcoming-section {
-            padding: 4rem 2rem;
-            text-align: center;
-            background-color: #161616;
-        }
-
-        .section-title {
-            font-family: var(--font-heading);
-            font-size: 2.2rem;
-            color: #ffffff;
-            margin-bottom: 3rem;
-        }
-
-        .shelf-container {
+        .hero-image-container {
+            width: 35%;
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            max-width: 800px;
+        }
+
+        .hero-image-container img {
+            max-width: 280px;
+            width: 100%;
+            border: 8px solid var(--gold);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+        }
+
+        /* --- Upcoming Works Section --- */
+        .upcoming-section {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            text-align: center;
+            padding: 70px 5%;
+        }
+
+        .upcoming-section h2 {
+            color: var(--maroon);
+            font-size: 2rem;
+            margin-bottom: 50px;
+        }
+
+        .shelf-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin: 0 auto;
-            position: relative;
-            flex-wrap: wrap;
+            max-width: 600px;
         }
 
-        .book-placeholder {
-            width: 120px;
-            height: 170px;
-            background: #e0e0e0;
-            border-radius: 2px;
-            box-shadow: -5px 5px 15px rgba(0,0,0,0.4);
+        .books-container {
+            display: flex;
+            gap: 20px;
+            align-items: flex-end;
+            margin-bottom: -5px; /* Pull books down to touch shelf */
+            z-index: 2;
         }
 
-        .shelf-wood {
-            height: 20px;
-            background: linear-gradient(to bottom, #8a7352, #5c4a32);
-            max-width: 860px;
-            margin: 0 auto;
-            border-radius: 3px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+        .book-mockup {
+            width: 90px;
+            height: 130px;
+            background: linear-gradient(to right, #f0f0f0 0%, #ffffff 15%, #e8e8e8 90%, #dcdcdc 100%);
+            border-radius: 2px 5px 5px 2px;
+            box-shadow: -4px 4px 8px rgba(0,0,0,0.15), inset -2px 0 5px rgba(0,0,0,0.05);
+            border: 1px solid #ddd;
         }
 
-        /* About Author Section */
+        .shelf {
+            width: 100%;
+            height: 25px;
+            background: linear-gradient(to bottom, #a37d49 0%, #8b6331 100%);
+            border-top: 2px solid #d4b078;
+            box-shadow: 0 15px 20px -5px rgba(0,0,0,0.6);
+            z-index: 1;
+        }
+
+        /* --- About Section --- */
         .about-section {
-            padding: 5rem 8%;
-            background: radial-gradient(circle, #22252a 0%, #0d0e10 100%);
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 4rem;
-            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 80px 8%;
+            /* Simulated dark marble background */
+            background: radial-gradient(circle at center, #272a33 0%, #111216 100%);
+            position: relative;
+            direction: ltr; /* Keeps image left, text right */
         }
 
-        .author-img {
-            width: 280px;
+        .about-image {
+            width: 30%;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             filter: grayscale(100%);
-            border: 1px solid #333;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .about-content {
-            max-width: 500px;
+        .about-text {
+            width: 50%;
+            direction: rtl;
+            text-align: right;
         }
 
-        .author-name-calligraphy {
-            font-family: var(--font-calligraphy);
+        .about-title {
+            color: var(--gold);
             font-size: 3.5rem;
-            color: var(--text-gold);
-            margin-bottom: 1rem;
-            line-height: 1.2;
+            margin-bottom: 25px;
+            /* Using cursive fallback to simulate the calligraphy in the design */
+            font-family: 'Brush Script MT', cursive, sans-serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
         }
 
-        .about-content p {
-            font-size: 1rem;
-            color: #cccccc;
-            margin-bottom: 0.8rem;
-            line-height: 1.8;
+        .about-text p {
+            font-size: 1.1rem;
+            color: #cfcfcf;
+            margin-bottom: 15px;
         }
 
-        /* Footer */
+        /* --- Footer --- */
         footer {
-            background-color: #0a0a0a;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.85rem;
+            background-color: #0a0a0c;
             color: #666;
-            border-top: 1px solid #1a1a1a;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+        }
+        
+        .footer-icon {
+            margin-top: 10px;
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 850px) {
+            .hero-section, .about-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text, .hero-image-container, .about-text, .about-image {
+                width: 100%;
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            .hero-text { direction: rtl; }
+            header { flex-direction: column; gap: 20px; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
+            .books-container { flex-wrap: wrap; justify-content: center; gap: 10px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- الهيدر -->
+    <!-- Header Navigation -->
     <header>
-        <a href="#" class="logo">حسين أحمد</a>
+        <div class="logo">حسين احمد</div>
         <nav>
-            <a href="#" class="active">الصفحة الرئيسية</a>
-            <a href="#">الأعمال</a>
-            <a href="#">حول حسين أحمد</a>
-            <a href="#">مقالات</a>
-            <a href="#">أخبار وعروض</a>
-            <a href="#">اتصال</a>
+            <ul>
+                <li class="active">الصفحة الرئيسية</li>
+                <li class="dropdown">الأعمال</li>
+                <li>حول حسين احمد</li>
+                <li>مقالات</li>
+                <li>أخبار وعروض</li>
+                <li>اتصال</li>
+            </ul>
         </nav>
     </header>
 
-    <!-- قسم الرواية الرئيسية HERO -->
+    <!-- Main Hero Section -->
     <section class="hero-section">
         <div class="hero-text">
-            <p>عقب رحيل شخصية سياسية ثقيلة إثر جراحة ناجحة، تتحول أروقة الشفاء إلى مسرح لتصفية الحسابات بين تقارير تحذف وشائعات تصنع للإعلام وتهم أعدت مسبقاً. يجد جراح بين جدران الخداع ويواجه عقوبة الإعدام لجريمة دولية.</p>
-            <a href="#" class="btn-outline-gold">نبذة عن الرواية</a>
+            <p>عقب رحيل شخصية سياسية ثقيلة إثر جراحة ناجحة. تتحول أروقة الشفاء إلى مسرح لتصفية الحسابات بين تقارير تحذف وشائعات تصنع للإعلام وتهم معدة مسبقاً. يجد جراح بين جدران الخداع ويواجه عقوبة الإعدام لجريمة دولية.</p>
+            <button class="btn-primary">نبذة عن الرواية</button>
         </div>
-        <div class="hero-image-frame">
-            <img src="https://via.placeholder.com/260x380/111/d4af37?text=إنعاش+متهم" alt="إنعاش متهم">
+        <div class="hero-image-container">
+            <!-- Referencing the provided file verbatim -->
+            <img src="24177.png" alt="غلاف الرواية - انعاش متهم">
         </div>
     </section>
 
-    <!-- قسم أعمال قادمة -->
+    <!-- Upcoming Works (Bookshelf) -->
     <section class="upcoming-section">
-        <h2 class="section-title">أعمال قادمة</h2>
-        <div class="shelf-container">
-            <div class="book-placeholder"></div>
-            <div class="book-placeholder"></div>
-            <div class="book-placeholder"></div>
-            <div class="book-placeholder"></div>
+        <h2>أعمال قادمة</h2>
+        <div class="shelf-wrapper">
+            <div class="books-container">
+                <div class="book-mockup"></div>
+                <div class="book-mockup"></div>
+                <div class="book-mockup"></div>
+                <div class="book-mockup"></div>
+            </div>
+            <div class="shelf"></div>
         </div>
-        <div class="shelf-wood"></div>
     </section>
 
-    <!-- قسم عن الكاتب -->
+    <!-- About Author Section -->
     <section class="about-section">
-        <img src="https://via.placeholder.com/280x350/222/fff?text=Hussein+Ahmed" alt="حسين أحمد" class="author-img">
-        
-        <div class="about-content">
-            <h1 class="author-name-calligraphy">حُسَيْن أَحْمَد</h1>
+        <div class="about-image">
+            <!-- Referencing the provided file verbatim again for the author portrait placeholder -->
+            <img src="24177.png" alt="صورة الكاتب حسين احمد">
+        </div>
+        <div class="about-text">
+            <h1 class="about-title">حسين احمد</h1>
             <p>كاتب عراقي ناشئ وطالب جامعي في قسم التمريض من بغداد.</p>
-            <p>شخصياً، أهوى الأعمال الفنية القصصية ذات طابع سينمائي وملحمي مثير، حالياً أسبوع بتأليف أعمال قصصية روائية وأهتم بتطوير أسلوب سردي وتحديث وتنسيق لون معاصر وجاد بالطرح.</p>
+            <p>شخصيا، اهوى اعمال الفنية القصصية ذات طابع سينمائي وملحمي مثير،</p>
+            <p>حاليا اقوم بتأليف أعمال قصصية روائية واهتم بتطوير أسلوب سردي وتقديم لون معاصر وجاد بالطرح.</p>
         </div>
     </section>
 
-    <!-- الفوتر -->
+    <!-- Footer -->
     <footer>
-        <p>حسين أحمد © 2026</p>
-    </footer>
-
-</body>
-</html>
-            position: relative;
-            padding: 12px;
-            border: 2px solid var(--text-gold);
-            background-color: #0d0d0d;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-        }
-
-        .hero-image-frame img {
-            width: 260px;
-            display: block;
-        }
-
-        /* Upcoming Books Section */
-        .upcoming-section {
-            padding: 4rem 2rem;
-            text-align: center;
-            background-color: #161616;
-        }
-
-        .section-title {
-            font-family: var(--font-heading);
-            font-size: 2.2rem;
-            color: #ffffff;
-            margin-bottom: 3rem;
-        }
-
-        .shelf-container {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .book-placeholder {
-            width: 120px;
-            height: 170px;
-            background: #e0e0e0;
-            border-radius: 2px;
-            box-shadow: -5px 5px 15px rgba(0,0,0,0.4);
-        }
-
-        .shelf-wood {
-            height: 20px;
-            background: linear-gradient(to bottom, #8a7352, #5c4a32);
-            max-width: 860px;
-            margin: 0 auto;
-            border-radius: 3px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.6);
-        }
-
-        /* About Author Section */
-        .about-section {
-            padding: 5rem 8%;
-            background: radial-gradient(circle, #22252a 0%, #0d0e10 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4rem;
-            flex-wrap: wrap;
-        }
-
-        .author-img {
-            width: 280px;
-            filter: grayscale(100%);
-            border: 1px solid #333;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .about-content {
-            max-width: 500px;
-        }
-
-        .author-name-calligraphy {
-            font-family: var(--font-calligraphy);
-            font-size: 3.5rem;
-            color: var(--text-gold);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .about-content p {
-            font-size: 1rem;
-            color: #cccccc;
-            margin-bottom: 0.8rem;
-            line-height: 1.8;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #0a0a0a;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.85rem;
-            color: #666;
-            border-top: 1px solid #1a1a1a;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- الهيدر -->
-    <header>
-        <a href="#" class="logo">حسين أحمد</a>
-        <nav>
-            <a href="#" class="active">الصفحة الرئيسية</a>
-            <a href="#">الأعمال</a>
-            <a href="#">حول حسين أحمد</a>
-            <a href="#">مقالات</a>
-            <a href="#">أخبار وعروض</a>
-            <a href="#">اتصال</a>
-        </nav>
-    </header>
-
-    <!-- قسم الرواية الرئيسية HERO -->
-    <section class="hero-section">
-        <div class="hero-text">
-            <p>عقب رحيل شخصية سياسية ثقيلة إثر جراحة ناجحة، تتحول أروقة الشفاء إلى مسرح لتصفية الحسابات بين تقارير تحذف وشائعات تصنع للإعلام وتهم أعدت مسبقاً. يجد جراح بين جدران الخداع ويواجه عقوبة الإعدام لجريمة دولية.</p>
-            <a href="#" class="btn-outline-gold">نبذة عن الرواية</a>
-        </div>
-        <div class="hero-image-frame">
-            <!-- استبدل الرابط أدناه برابط غلاف روايتك عند رفعه -->
-            <img src="https://via.placeholder.com/260x380/111/d4af37?text=إنعاش+متهم" alt="إنعاش متهم">
-        </div>
-    </section>
-
-    <!-- قسم أعمال قادمة -->
-    <section class="upcoming-section">
-        <h2 class="section-title">أعمال قادمة</h2>
-        <div class="shelf-container">
-            <div class="book-placeholder"></div>
-            <div class="book-placeholder"></div>
-            <div class="book-placeholder"></div>
-            <div class="book-placeholder"></div>
-        </div>
-        <div class="shelf-wood"></div>
-    </section>
-
-    <!-- قسم عن الكاتب -->
-    <section class="about-section">
-        <!-- استبدل الرابط أدناه بصورتك الشخصية عند رفعها -->
-        <img src="https://via.placeholder.com/280x350/222/fff?text=Hussein+Ahmed" alt="حسين أحمد" class="author-img">
-        
-        <div class="about-content">
-            <h1 class="author-name-calligraphy">حُسَيْن أَحْمَد</h1>
-            <p>كاتب عراقي ناشئ وطالب جامعي في قسم التمريض من بغداد.</p>
-            <p>شخصياً، أهوى الأعمال الفنية القصصية ذات طابع سينمائي وملحمي مثير، حالياً أسبوع بتأليف أعمال قصصية روائية وأهتم بتطوير أسلوب سردي وتحديث وتنسيق لون معاصر وجاد بالطرح.</p>
-        </div>
-    </section>
-
-    <!-- الفوتر -->
-    <footer>
-        <p>حسين أحمد © 2026</p>
+        <p>حسين احمد &copy; 2026</p>
+        <div class="footer-icon">❖</div>
     </footer>
 
 </body>
