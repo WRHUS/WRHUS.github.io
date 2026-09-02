@@ -1,1046 +1,213 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="theme-color" content="#171717">
-
-    <meta name="description"
-          content="الموقع الرسمي للكاتب حسين أحمد">
-
-    <title>حسين أحمد | الكاتب</title>
-
-
-    <!-- =====================================================
-         GOOGLE FONTS
-    ====================================================== -->
-
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
-
-
-    <style>
-
-        /* =====================================================
-           RESET
-        ====================================================== */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-
-            background: #f8f7f4;
-
-            color: #222;
-
-            font-family:
-                "Noto Naskh Arabic",
-                serif;
-
-            overflow-x: hidden;
-        }
-
-        img {
-            display: block;
-            max-width: 100%;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        button {
-            font-family: inherit;
-        }
-
-
-        /* =====================================================
-           VARIABLES
-        ====================================================== */
-
-        :root {
-
-            --black:
-                #171717;
-
-            --black-soft:
-                #202020;
-
-            --cream:
-                #eee5d8;
-
-            --gold:
-                #c6a06b;
-
-            --gold-light:
-                #dfbd88;
-
-            --brown:
-                #582a27;
-
-            --brown-dark:
-                #3f1e1c;
-
-            --paper:
-                #faf9f6;
-
-            --dark-blue:
-                #1b2229;
-
-            --dark-blue-2:
-                #252e37;
-        }
-
-
-        /* =====================================================
-           NAVBAR
-        ====================================================== */
-
-        .navbar {
-
-            width: 100%;
-            height: 81px;
-
-            position: relative;
-            z-index: 100;
-
-            background:
-                linear-gradient(
-                    180deg,
-                    #1b1b1b 0%,
-                    #151515 100%
-                );
-
-            border-bottom:
-                1px solid
-                rgba(202,168,112,.16);
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            /*
-             * نستخدم LTR هنا حتى يبقى
-             * اسم الكاتب يسارًا والقائمة يمينًا
-             */
-            direction: ltr;
-
-            padding:
-                0 clamp(28px, 5.3vw, 80px);
-        }
-
-
-        /* =====================================================
-           LOGO
-        ====================================================== */
-
-        .logo {
-
-            direction: rtl;
-
-            font-family:
-                "Noto Naskh Arabic",
-                serif;
-
-            font-size:
-                clamp(25px, 2.1vw, 34px);
-
-            line-height: 1;
-
-            font-weight: 500;
-
-            color: #e9dfd0;
-
-            white-space: nowrap;
-
-            letter-spacing: -1.3px;
-
-            transition:
-                color .3s ease;
-        }
-
-        .logo:hover {
-            color: var(--gold-light);
-        }
-
-
-        /* =====================================================
-           DESKTOP NAV
-        ====================================================== */
-
-        .nav {
-
-            direction: rtl;
-
-            display: flex;
-
-            align-items: center;
-
-            gap:
-                clamp(16px, 2vw, 31px);
-
-            height: 100%;
-
-            font-family:
-                "Noto Kufi Arabic",
-                sans-serif;
-
-            font-size:
-                clamp(10px, .82vw, 13px);
-
-            color: #d8d0c5;
-        }
-
-        .nav a {
-
-            position: relative;
-
-            white-space: nowrap;
-
-            height: 100%;
-
-            display: flex;
-
-            align-items: center;
-
-            color: #d8d0c5;
-
-            transition:
-                color .25s ease;
-        }
-
-        .nav a:hover {
-            color: #d6b47e;
-        }
-
-        .nav a::after {
-
-            content: "";
-
-            position: absolute;
-
-            bottom: 20px;
-
-            right: 0;
-
-            width: 0;
-
-            height: 1px;
-
-            background:
-                var(--gold);
-
-            transition:
-                width .3s ease;
-        }
-
-        .nav a:hover::after {
-            width: 100%;
-        }
-
-
-        /* =====================================================
-           DROPDOWN ARROW
-        ====================================================== */
-
-        .arrow {
-
-            margin-right: 6px;
-
-            font-size: 10px;
-
-            color: #bba98e;
-
-            transform:
-                translateY(-1px);
-        }
-
-
-        /* =====================================================
-           MOBILE MENU BUTTON
-        ====================================================== */
-
-        .mobile-menu {
-
-            display: none;
-
-            width: 42px;
-            height: 42px;
-
-            border: 1px solid
-                rgba(202,168,112,.25);
-
-            background:
-                rgba(255,255,255,.025);
-
-            color: #e9dfd0;
-
-            cursor: pointer;
-
-            font-size: 21px;
-
-            align-items: center;
-            justify-content: center;
-        }
-
-
-        /* =====================================================
-           HERO
-        ====================================================== */
-
-        .hero {
-
-            width: 100%;
-
-            height: 422px;
-
-            position: relative;
-
-            background:
-
-                radial-gradient(
-                    ellipse at 18% 35%,
-                    rgba(73,91,106,.22),
-                    transparent 48%
-                ),
-
-                linear-gradient(
-                    135deg,
-                    #1b2026 0%,
-                    #273038 48%,
-                    #151a1e 100%
-                );
-
-            overflow: visible;
-        }
-
-
-        /* =====================================================
-           HERO GEOMETRIC PANELS
-        ====================================================== */
-
-        .hero::before {
-
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            pointer-events: none;
-
-            background:
-
-                linear-gradient(
-                    142deg,
-                    transparent 0%,
-                    transparent 51.2%,
-                    rgba(0,0,0,.32) 51.4%,
-                    rgba(0,0,0,.32) 51.8%,
-                    transparent 52%
-                ),
-
-                linear-gradient(
-                    37deg,
-                    transparent 0%,
-                    transparent 76%,
-                    rgba(255,255,255,.045) 76.2%,
-                    rgba(255,255,255,.045) 76.7%,
-                    transparent 77%
-                ),
-
-                linear-gradient(
-                    125deg,
-                    transparent 0%,
-                    transparent 78%,
-                    rgba(0,0,0,.2) 78.3%,
-                    transparent 79%
-                );
-        }
-
-
-        /* =====================================================
-           HERO TOP RIGHT PANEL
-        ====================================================== */
-
-        .hero-panel {
-
-            position: absolute;
-
-            top: 0;
-            right: 0;
-
-            width: 46%;
-
-            height: 188px;
-
-            background:
-
-                linear-gradient(
-                    140deg,
-                    rgba(255,255,255,.13),
-                    rgba(120,120,120,.04)
-                );
-
-            clip-path:
-                polygon(
-                    28% 0,
-                    100% 0,
-                    100% 100%,
-                    0 100%
-                );
-
-            opacity: .55;
-
-            border-left:
-                1px solid
-                rgba(255,255,255,.08);
-        }
-
-
-        /* =====================================================
-           HERO INNER
-        ====================================================== */
-
-        .hero-inner {
-
-            width:
-                min(1160px, 89%);
-
-            height: 100%;
-
-            margin: auto;
-
-            position: relative;
-
-            display: block;
-        }
-
-
-        /* =====================================================
-           HERO TEXT
-        ====================================================== */
-
-        .hero-copy {
-
-            position: absolute;
-
-            top: 87px;
-
-            left: 5%;
-
-            width: 53%;
-
-            text-align: right;
-
-            z-index: 5;
-
-            color: #eee6db;
-        }
-
-        .hero-description {
-
-            max-width: 585px;
-
-            margin-left: auto;
-
-            font-family:
-                "Noto Naskh Arabic",
-                serif;
-
-            font-size:
-                clamp(17px, 1.55vw, 23px);
-
-            line-height:
-                1.88;
-
-            font-weight: 500;
-
-            letter-spacing:
-                -.2px;
-
-            text-shadow:
-                0 2px 7px rgba(0,0,0,.5);
-        }
-
-
-        /* =====================================================
-           HERO BUTTON
-        ====================================================== */
-
-        .hero-button {
-
-            display: inline-flex;
-
-            align-items: center;
-            justify-content: center;
-
-            min-width: 159px;
-
-            height: 47px;
-
-            margin-top: 27px;
-
-            padding:
-                0 22px;
-
-            position: relative;
-
-            background:
-
-                linear-gradient(
-                    180deg,
-                    #6b322c 0%,
-                    #4b211e 100%
-                );
-
-            border:
-                1px solid
-                #ae8051;
-
-            color: #f1e6d5;
-
-            font-family:
-                "Noto Kufi Arabic",
-                sans-serif;
-
-            font-size: 12px;
-
-            box-shadow:
-
-                0 7px 17px
-                rgba(0,0,0,.34),
-
-                inset 0 1px 0
-                rgba(255,255,255,.16);
-
-            transition:
-                all .3s ease;
-        }
-
-
-        .hero-button::before {
-
-            content: "";
-
-            position: absolute;
-
-            inset: 3px;
-
-            border:
-                1px solid
-                rgba(229,196,151,.28);
-
-            pointer-events: none;
-        }
-
-
-        .hero-button:hover {
-
-            transform:
-                translateY(-3px);
-
-            background:
-                linear-gradient(
-                    180deg,
-                    #7b3b34,
-                    #572622
-                );
-
-            box-shadow:
-
-                0 11px 25px
-                rgba(0,0,0,.42),
-
-                inset 0 1px 0
-                rgba(255,255,255,.2);
-        }
-
-
-        /* =====================================================
-           BOOK COVER
-        ====================================================== */
-
-        .cover-holder {
-
-            position: absolute;
-
-            z-index: 20;
-
-            top: 73px;
-
-            right: 4.8%;
-
-            width:
-                clamp(245px, 27vw, 300px);
-
-            padding: 8px;
-
-            background:
-
-                linear-gradient(
-                    135deg,
-                    #73502e 0%,
-                    #d4b078 18%,
-                    #8b6339 39%,
-                    #e0bd86 56%,
-                    #654425 100%
-                );
-
-            box-shadow:
-
-                0 22px 36px
-                rgba(0,0,0,.54),
-
-                0 5px 11px
-                rgba(0,0,0,.45);
-        }
-
-
-        .cover-holder::before {
-
-            content: "";
-
-            position: absolute;
-
-            inset: 3px;
-
-            border:
-                1px solid
-                rgba(255,231,190,.75);
-
-            pointer-events: none;
-
-            z-index: 2;
-        }
-
-
-        .cover-holder::after {
-
-            content: "";
-
-            position: absolute;
-
-            inset: 9px;
-
-            border:
-                1px solid
-                rgba(80,53,30,.65);
-
-            pointer-events: none;
-
-            z-index: 2;
-        }
-
-
-        .cover {
-
-            width: 100%;
-
-            aspect-ratio:
-                2 / 3;
-
-            object-fit: cover;
-
-            object-position: center;
-
-            background: #080808;
-
-            position: relative;
-
-            z-index: 1;
-        }
-
-
-        /* =====================================================
-           WORKS SECTION
-        ====================================================== */
-
-        .works {
-
-            width: 100%;
-
-            min-height: 372px;
-
-            position: relative;
-
-            background:
-                #faf9f6;
-
-            padding-top: 80px;
-
-            padding-bottom: 70px;
-        }
-
-
-        .works-title {
-
-            text-align: center;
-
-            color:
-                #4e2526;
-
-            font-family:
-                "Noto Naskh Arabic",
-                serif;
-
-            font-size:
-                clamp(29px, 2.4vw, 36px);
-
-            line-height: 1;
-
-            font-weight: 600;
-
-            margin-bottom: 43px;
-        }
-
-
-        /* =====================================================
-           BOOK DISPLAY
-        ====================================================== */
-
-        .book-display {
-
-            width:
-                min(680px, 78%);
-
-            height: 207px;
-
-            margin: auto;
-
-            position: relative;
-
-            display: flex;
-
-            align-items: flex-start;
-
-            justify-content: center;
-
-            gap:
-                clamp(17px, 2.5vw, 28px);
-
-            direction: ltr;
-        }
-
-
-        /* =====================================================
-           UPCOMING BOOK
-        ====================================================== */
-
-        .upcoming-book {
-
-            width:
-                clamp(83px, 10vw, 106px);
-
-            height:
-                clamp(137px, 15.5vw, 157px);
-
-            position: relative;
-
-            background:
-
-                linear-gradient(
-                    90deg,
-                    #dcdcd9 0%,
-                    #f9f9f7 8%,
-                    #ffffff 35%,
-                    #fafafa 82%,
-                    #e8e8e5 100%
-                );
-
-            border:
-                1px solid #dededb;
-
-            box-shadow:
-
-                -6px 1px 8px
-                rgba(0,0,0,.11),
-
-                5px 5px 11px
-                rgba(0,0,0,.10);
-
-            z-index: 3;
-
-            transition:
-                transform .35s ease;
-        }
-
-
-        .upcoming-book:hover {
-            transform:
-                translateY(-8px);
-        }
-
-
-        /* spine */
-
-        .upcoming-book::before {
-
-            content: "";
-
-            position: absolute;
-
-            top: 2px;
-
-            left: -6px;
-
-            width: 6px;
-
-            height:
-                calc(100% - 4px);
-
-            background:
-
-                linear-gradient(
-                    90deg,
-                    #cfcfcd,
-                    #eeeeec
-                );
-
-            border-left:
-                1px solid #c6c6c3;
-        }
-
-
-        /* page bottom */
-
-        .upcoming-book::after {
-
-            content: "";
-
-            position: absolute;
-
-            bottom: -5px;
-
-            left: 4px;
-
-            width:
-                calc(100% - 2px);
-
-            height: 6px;
-
-            background:
-                linear-gradient(
-                    180deg,
-                    rgba(0,0,0,.14),
-                    transparent
-                );
-
-            filter:
-                blur(2px);
-        }
-
-
-        /* =====================================================
-           WOODEN SHELF
-        ====================================================== */
-
-        .shelf {
-
-            position: absolute;
-
-            left: 50%;
-
-            bottom: 7px;
-
-            transform:
-                translateX(-50%);
-
-            width:
-                min(568px, 100%);
-
-            height: 53px;
-
-            background:
-
-                linear-gradient(
-                    180deg,
-                    #967344 0%,
-                    #76572d 35%,
-                    #5b401e 58%,
-                    #76572d 100%
-                );
-
-            box-shadow:
-
-                0 10px 15px
-                rgba(0,0,0,.22),
-
-                inset 0 1px
-                rgba(255,255,255,.2);
-
-            z-index: 1;
-        }
-
-
-        .shelf::before {
-
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-            right: 0;
-
-            top: 1px;
-
-            height: 3px;
-
-            background:
-                rgba(229,199,148,.33);
-
-            filter:
-                blur(1px);
-        }
-
-
-        .shelf::after {
-
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-            right: 0;
-
-            bottom: -6px;
-
-            height: 6px;
-
-            background:
-                #4a3219;
-        }
-
-
-        /* =====================================================
-           ABOUT SECTION
-        ====================================================== */
-
-        .about {
-
-            width: 100%;
-
-            min-height: 535px;
-
-            position: relative;
-
-            overflow: hidden;
-
-            background:
-
-                linear-gradient(
-                    135deg,
-                    #20262d 0%,
-                    #292f36 48%,
-                    #151a20 100%
-                );
-
-            color: white;
-        }
-
-
-        /* white left area */
-
-        .about::before {
-
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-            left: 0;
-
-            width: 27.2%;
-
-            height: 100%;
-
-            background:
-                #faf9f6;
-
-            z-index: 1;
-        }
-
-
-        /* marble texture */
-
-        .about::after {
-
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            opacity: .25;
-
-            pointer-events: none;
-
-            background:
-
-                linear-gradient(
-                    122deg,
-                    transparent 0 23%,
-                    rgba(255,255,255,.09) 23.3%,
-                    transparent 23.8%
-                ),
-
-                linear-gradient(
-                    157deg,
-                    transparent 0 43%,
-                    rgba(0,0,0,.45) 43.4%,
-                    transparent 44%
-                ),
-
-                linear-gradient(
-                    38deg,
-                    transparent 0 69%,
-                    rgba(255,255,255,.06) 69.3%,
-                    transparent 70%
-                ),
-
-                linear-gradient(
-                    170deg,
-                    transparent 0 82%,
-                    rgba(0,0,0,.35) 82.4%,
-                    transparent 83%
-                );
-        }
-
-
-        /* =====================================================
-           ABOUT INNER
-        ====================================================== */
-
-        .about-inner {
-
-            width:
-                min(1100px, 88%);
-
-            height: 535px;
-
-  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حسين احمد | كاتب</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          body: ['Tajawal', 'sans-serif'],
+          display: ['Aref Ruqaa', 'serif'],
+        },
+        colors: {
+          ink: '#121216',
+          panel: '#131316',
+          navy: '#212d3d',
+          navylight: '#31445c',
+          navydeep: '#0d1420',
+          gold: '#c9a35f',
+          goldlight: '#e3c789',
+          maroon: '#6a1f2a',
+          maroonlight: '#8a2f3c',
+          cream: '#f6f1e7',
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Tajawal', sans-serif; }
+  .font-display { font-family: 'Aref Ruqaa', serif; }
+</style>
+</head>
+<body class="bg-ink text-cream antialiased">
+
+<!-- ============ HEADER ============ -->
+<header class="sticky top-0 z-50 bg-panel/95 backdrop-blur border-b border-white/5">
+  <div dir="ltr" class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 h-[76px] flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#" class="font-display text-[26px] sm:text-3xl text-goldlight" dir="rtl">حسين احمد</a>
+
+    <!-- Desktop nav -->
+    <nav dir="ltr" class="hidden lg:flex items-center gap-8 text-[15px] text-gray-300">
+      <a href="#" dir="rtl" class="hover:text-goldlight transition-colors">الصفحة الرئيسية</a>
+
+      <div class="relative group">
+        <button dir="rtl" class="flex items-center gap-1.5 hover:text-goldlight transition-colors">
+          <span>الأعمال</span>
+          <svg class="w-3 h-3 mt-px transition-transform group-hover:rotate-180" viewBox="0 0 12 12" fill="none">
+            <path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div dir="rtl" class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity absolute top-full right-0 mt-3 w-44 bg-panel border border-white/10 rounded-md shadow-xl py-2 text-sm">
+          <a href="#" class="block px-4 py-2 text-gray-300 hover:text-goldlight hover:bg-white/5">الروايات</a>
+          <a href="#" class="block px-4 py-2 text-gray-300 hover:text-goldlight hover:bg-white/5">القصص القصيرة</a>
+          <a href="#" class="block px-4 py-2 text-gray-300 hover:text-goldlight hover:bg-white/5">أعمال قادمة</a>
+        </div>
+      </div>
+
+      <a href="#about" dir="rtl" class="hover:text-goldlight transition-colors">حول حسين احمد</a>
+      <a href="#" dir="rtl" class="hover:text-goldlight transition-colors">مقالات</a>
+      <a href="#" dir="rtl" class="hover:text-goldlight transition-colors">أخبار وعروض</a>
+      <a href="#" dir="rtl" class="hover:text-goldlight transition-colors">اتصال</a>
+    </nav>
+
+    <!-- Mobile toggle -->
+    <button id="menuBtn" aria-label="فتح القائمة" class="lg:hidden text-cream p-1">
+      <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none">
+        <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile nav -->
+  <nav id="mobileMenu" class="hidden lg:hidden border-t border-white/5 bg-panel px-6 py-4 space-y-1 text-[15px] text-gray-300">
+    <a href="#" class="block py-2.5 hover:text-goldlight">الصفحة الرئيسية</a>
+    <a href="#" class="block py-2.5 hover:text-goldlight">الأعمال</a>
+    <a href="#about" class="block py-2.5 hover:text-goldlight">حول حسين احمد</a>
+    <a href="#" class="block py-2.5 hover:text-goldlight">مقالات</a>
+    <a href="#" class="block py-2.5 hover:text-goldlight">أخبار وعروض</a>
+    <a href="#" class="block py-2.5 hover:text-goldlight">اتصال</a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="relative overflow-hidden bg-ink">
+  <!-- angular navy panel -->
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0" style="clip-path: polygon(56% 0%, 100% 0%, 100% 100%, 40% 100%); background: linear-gradient(155deg, #29394e 0%, #1a2635 55%, #0d1420 100%);"></div>
+    <div class="absolute inset-0" style="clip-path: polygon(56% 0%, 76% 0%, 66% 38%); background: linear-gradient(135deg, #3c5170 0%, #29394e 100%); opacity:0.65;"></div>
+    <div class="absolute inset-0" style="clip-path: polygon(40% 100%, 62% 100%, 50% 62%); background: linear-gradient(135deg, #0d1420 0%, #1a2635 100%); opacity:0.8;"></div>
+  </div>
+
+  <div dir="ltr" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-16 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 items-center">
+
+    <!-- Text column -->
+    <div dir="rtl" class="text-right max-w-md">
+      <p class="text-[15px] sm:text-base leading-[2.1] text-gray-200/90">
+        عقب رحيل شخصية سياسية ثقيلة إثر جراحة ناجحة، تتحول أروقة الشفاء إلى مسرح لتصفية الحسابات، بين تقارير تُخفى وشائعات تُصنع للإعلام وتُهم مُعدة مسبقاً، يجد جراح نفسه بين جدران الخداع ويواجه عقوبة الإعدام لجريمة دولية.
+      </p>
+      <a href="#" class="inline-block mt-8 bg-maroon hover:bg-maroonlight text-cream text-sm sm:text-[15px] px-7 py-3 rounded-md border border-white/10 shadow-lg shadow-black/30 transition-colors">
+        نبذة عن الرواية
+      </a>
+    </div>
+
+    <!-- Book cover column -->
+    <div class="flex justify-center md:justify-start">
+      <div class="p-[6px] rounded-[3px] shadow-2xl shadow-black/60" style="background: linear-gradient(145deg, #e3c789, #a9803f);">
+        <div class="p-[3px] bg-ink rounded-[2px]">
+          <div class="relative w-[220px] sm:w-[250px] aspect-[3/4] overflow-hidden rounded-[1px]" style="background: linear-gradient(180deg, #1c1c20 0%, #0a0a0c 100%);">
+            <!-- window glow -->
+            <div class="absolute left-1/2 top-[38%] -translate-x-1/2 w-40 h-52 rounded-sm" style="background: radial-gradient(ellipse at 50% 30%, rgba(214,168,96,0.35), transparent 70%);"></div>
+            <!-- window frame -->
+            <div class="absolute left-1/2 top-[30%] -translate-x-1/2 w-24 h-28 border border-goldlight/20">
+              <div class="absolute inset-y-0 left-1/2 w-px bg-goldlight/20"></div>
+              <div class="absolute inset-x-0 top-1/2 h-px bg-goldlight/20"></div>
+            </div>
+            <!-- seated silhouette -->
+            <svg class="absolute bottom-6 left-1/2 -translate-x-1/2 w-24 h-20 opacity-90" viewBox="0 0 100 80" fill="#050506">
+              <ellipse cx="50" cy="66" rx="30" ry="10"/>
+              <path d="M30 66 Q30 40 45 34 L45 18 Q45 10 52 10 Q59 10 59 18 L59 36 Q72 42 72 66 Z"/>
+              <circle cx="52" cy="10" r="8"/>
+            </svg>
+            <!-- title -->
+            <div class="absolute top-6 inset-x-0 text-center px-3">
+              <p class="font-display text-cream text-3xl sm:text-4xl leading-tight">انكماش</p>
+              <p class="font-display text-cream text-3xl sm:text-4xl leading-tight -mt-1">متهم</p>
+              <p class="text-goldlight/80 text-xs mt-2 tracking-widest">رواية</p>
+            </div>
+            <!-- author -->
+            <p class="absolute bottom-3 inset-x-0 text-center text-cream/80 text-xs font-display">حسين احمد</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ UPCOMING WORKS ============ -->
+<section class="bg-[#fdfbf6] py-16 md:py-24">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8 text-center">
+    <h2 class="font-display text-maroon text-4xl sm:text-5xl mb-14 md:mb-16">أعمال قادمة</h2>
+
+    <div class="flex flex-col items-center">
+      <!-- book spines -->
+      <div class="flex items-end justify-center gap-4 sm:gap-6">
+        <div class="w-16 sm:w-20 h-36 sm:h-44 bg-gradient-to-b from-white to-gray-100 border border-black/10 shadow-[0_8px_16px_-6px_rgba(0,0,0,0.25)] rounded-t-sm"></div>
+        <div class="w-16 sm:w-20 h-40 sm:h-48 bg-gradient-to-b from-white to-gray-100 border border-black/10 shadow-[0_8px_16px_-6px_rgba(0,0,0,0.25)] rounded-t-sm"></div>
+        <div class="w-16 sm:w-20 h-40 sm:h-48 bg-gradient-to-b from-white to-gray-100 border border-black/10 shadow-[0_8px_16px_-6px_rgba(0,0,0,0.25)] rounded-t-sm"></div>
+        <div class="w-16 sm:w-20 h-36 sm:h-44 bg-gradient-to-b from-white to-gray-100 border border-black/10 shadow-[0_8px_16px_-6px_rgba(0,0,0,0.25)] rounded-t-sm"></div>
+      </div>
+      <!-- shelf -->
+      <div class="w-full max-w-2xl h-5 sm:h-6 rounded-sm shadow-xl" style="background: linear-gradient(180deg, #d8b877 0%, #a9803f 55%, #6b4c24 100%);"></div>
+      <div class="w-full max-w-2xl h-2 rounded-b-sm" style="background: linear-gradient(180deg, #6b4c24 0%, #4a3319 100%);"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT AUTHOR ============ -->
+<section id="about" class="bg-panel">
+  <div dir="ltr" class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-stretch">
+
+    <!-- Photo -->
+    <div class="relative min-h-[320px] md:min-h-[420px]" style="background: radial-gradient(circle at 30% 20%, #2a3542 0%, #14181e 60%, #0a0c10 100%);">
+      <svg class="absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 max-w-[260px] opacity-90" viewBox="0 0 200 220" fill="none">
+        <rect x="0" y="0" width="200" height="220" fill="url(#grad)"/>
+        <defs>
+          <radialGradient id="grad" cx="50%" cy="25%" r="75%">
+            <stop offset="0%" stop-color="#8a8f96"/>
+            <stop offset="60%" stop-color="#3b3f45"/>
+            <stop offset="100%" stop-color="#151719"/>
+          </radialGradient>
+        </defs>
+        <circle cx="100" cy="70" r="42" fill="#4b4f55"/>
+        <path d="M35 220 Q35 140 100 128 Q165 140 165 220 Z" fill="#54585e"/>
+      </svg>
+    </div>
+
+    <!-- Text -->
+    <div dir="rtl" class="flex flex-col justify-center px-6 sm:px-10 py-14 md:py-16 text-right">
+      <h2 class="font-display text-goldlight text-5xl sm:text-6xl mb-6">حسين احمد</h2>
+      <p class="text-[15px] sm:text-base leading-[2.1] text-gray-300 max-w-md">
+        كاتب عراقي ناشئ وطالب جامعي في قسم التمريض من بغداد. شخصياً، أهوى الأعمال الفنية القصصية ذات طابع سينمائي وملحمي مثير. حالياً أقوم بتأليف أعمال قصصية روائية، وأهتم بتطوير أسلوب سردي وتقديم لون معاصر وجاد بالطرح.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink border-t border-white/5 py-10">
+  <div class="max-w-7xl mx-auto px-5 text-center">
+    <p class="text-gray-400 text-sm">حسين احمد © 2026</p>
+    <div class="w-2 h-2 mx-auto mt-3 rotate-45" style="background: linear-gradient(145deg, #e3c789, #a9803f);"></div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+</script>
+
+</body>
+</html>
