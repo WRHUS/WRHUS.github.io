@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حسين أحمد | كاتب وروائي</title>
+    <!-- استدعاء خطوط عربية أدبية احترافية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Readex+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --bg-paper: #f9f6f0;
+            --text-gold: #d4af37;
+            --text-dark: #2b2b2b;
+            --accent-teal: #008080;
+            --accent-purple: #2a1b3d;
+            --font-heading: 'Amiri', serif;
+            --font-body: 'Readex Pro', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-paper);
+            color: var(--text-dark);
+            font-family: var(--font-body);
+            line-height: 1.8;
+        }
+
+        /* الهيدر */
+        header {
+            background-color: var(--bg-dark);
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--text-gold);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-right: 1.5rem;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--text-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid var(--text-gold);
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--text-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 1.8rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .btn-teal {
+            background-color: var(--accent-teal);
+            color: #ffffff;
+        }
+
+        .btn-gold {
+            background-color: var(--text-gold);
+            color: var(--bg-dark);
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+        }
+
+        /* شريط الهوية */
+        .brand-strip {
+            background-color: var(--accent-purple);
+            color: var(--text-gold);
+            padding: 1.2rem 2rem;
+            text-align: center;
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* الأقسام العامة */
+        section {
+            padding: 3.5rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            color: var(--bg-dark);
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background-color: var(--text-gold);
+            margin: 0.5rem auto 0;
+        }
+
+        /* بطاقات الأعمال والمقالات */
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #e5e0d8;
+            border-radius: 8px;
+            padding: 1.8rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+        }
+
+        .card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            color: var(--accent-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        /* الفوتر */
+        footer {
+            background-color: var(--bg-dark);
+            color: #888888;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر -->
+    <header>
+        <a href="#" class="logo">حسين أحمد</a>
+        <nav>
+            <a href="#hero">الرئيسية</a>
+            <a href="#works">الأعمال</a>
+            <a href="#articles">المقالات</a>
+            <a href="#about">عن الكاتب</a>
+        </nav>
+    </header>
+
+    <!-- قسم Hero -->
+    <section id="hero" class="hero">
+        <h1>حسين أحمد</h1>
+        <p>كاتب وروائي • نصوص • روايات • أعمال أدبية</p>
+        <a href="#works" class="btn btn-teal">استكشف الأعمال الأدبية</a>
+    </section>
+
+    <!-- شريط الهوية البصرية -->
+    <div class="brand-strip">
+        <span>من عالم حسين أحمد الأدبي</span>
+        <a href="#articles" class="btn btn-gold">أحدث النصوص والمقالات</a>
+    </div>
+
+    <!-- قسم الأعمال الأدبية -->
+    <section id="works">
+        <h2 class="section-title">الأعمال الأدبية والروايات</h2>
+        <div class="card">
+            <h3>إنعاش متهم</h3>
+            <p>رواية تشويق وإثارة تجمع بين الغموض والتفاصيل الطبية الدقيقة في حبكة درامية متسارعة.</p>
+            <br>
+            <a href="#" class="btn btn-teal">تفاصيل الرواية</a>
+        </div>
+        <div class="card">
+            <h3>٥ ضحايا في حي أور</h3>
+            <p>سلسلة غموض وجريمة تدور أحداثها في شوارع بغداد، حيث تتشابك الخيوط للوصول إلى الحقيقة.</p>
+            <br>
+            <a href="#" class="btn btn-teal">تفاصيل الرواية</a>
+        </div>
+    </section>
+
+    <!-- قسم المقالات والنصوص -->
+    <section id="articles">
+        <h2 class="section-title">أحدث الكتابات والنصوص</h2>
+        <div class="card">
+            <h3>نصوص وقراءات أدبية</h3>
+            <p>مجموعة من المقالات والأفكار المكتوبة التي تناقش الأدب، الكتابة، والرؤى الفلسفية المستمرة.</p>
+        </div>
+    </section>
+
+    <!-- قسم عن الكاتب -->
+    <section id="about">
+        <h2 class="section-title">عن الكاتب</h2>
+        <div class="card" style="text-align: center;">
+            <p>حسين أحمد، كاتب وروائي مهتم بصناعة العوالم الأدبية المتباينة بين الإثارة والغموض والواقعية.</p>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>© 2026 جميع الحقوق محفوظة لـ حسين أحمد</p>
+    </footer>
+
+</body>
+</html>
+
