@@ -75,6 +75,8 @@
             min-height: 80vh;
             background: linear-gradient(135deg, #1f1f1f 0%, #111111 100%);
             position: relative;
+            flex-wrap: wrap;
+            gap: 2rem;
         }
 
         .hero-text {
@@ -107,6 +109,164 @@
         }
 
         .hero-image-frame {
+            position: relative;
+            padding: 12px;
+            border: 2px solid var(--text-gold);
+            background-color: #0d0d0d;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+            margin: 0 auto;
+        }
+
+        .hero-image-frame img {
+            width: 260px;
+            display: block;
+        }
+
+        /* Upcoming Books Section */
+        .upcoming-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            background-color: #161616;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 3rem;
+        }
+
+        .shelf-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        .book-placeholder {
+            width: 120px;
+            height: 170px;
+            background: #e0e0e0;
+            border-radius: 2px;
+            box-shadow: -5px 5px 15px rgba(0,0,0,0.4);
+        }
+
+        .shelf-wood {
+            height: 20px;
+            background: linear-gradient(to bottom, #8a7352, #5c4a32);
+            max-width: 860px;
+            margin: 0 auto;
+            border-radius: 3px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+        }
+
+        /* About Author Section */
+        .about-section {
+            padding: 5rem 8%;
+            background: radial-gradient(circle, #22252a 0%, #0d0e10 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .author-img {
+            width: 280px;
+            filter: grayscale(100%);
+            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .about-content {
+            max-width: 500px;
+        }
+
+        .author-name-calligraphy {
+            font-family: var(--font-calligraphy);
+            font-size: 3.5rem;
+            color: var(--text-gold);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .about-content p {
+            font-size: 1rem;
+            color: #cccccc;
+            margin-bottom: 0.8rem;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+            color: #666;
+            border-top: 1px solid #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر -->
+    <header>
+        <a href="#" class="logo">حسين أحمد</a>
+        <nav>
+            <a href="#" class="active">الصفحة الرئيسية</a>
+            <a href="#">الأعمال</a>
+            <a href="#">حول حسين أحمد</a>
+            <a href="#">مقالات</a>
+            <a href="#">أخبار وعروض</a>
+            <a href="#">اتصال</a>
+        </nav>
+    </header>
+
+    <!-- قسم الرواية الرئيسية HERO -->
+    <section class="hero-section">
+        <div class="hero-text">
+            <p>عقب رحيل شخصية سياسية ثقيلة إثر جراحة ناجحة، تتحول أروقة الشفاء إلى مسرح لتصفية الحسابات بين تقارير تحذف وشائعات تصنع للإعلام وتهم أعدت مسبقاً. يجد جراح بين جدران الخداع ويواجه عقوبة الإعدام لجريمة دولية.</p>
+            <a href="#" class="btn-outline-gold">نبذة عن الرواية</a>
+        </div>
+        <div class="hero-image-frame">
+            <img src="https://via.placeholder.com/260x380/111/d4af37?text=إنعاش+متهم" alt="إنعاش متهم">
+        </div>
+    </section>
+
+    <!-- قسم أعمال قادمة -->
+    <section class="upcoming-section">
+        <h2 class="section-title">أعمال قادمة</h2>
+        <div class="shelf-container">
+            <div class="book-placeholder"></div>
+            <div class="book-placeholder"></div>
+            <div class="book-placeholder"></div>
+            <div class="book-placeholder"></div>
+        </div>
+        <div class="shelf-wood"></div>
+    </section>
+
+    <!-- قسم عن الكاتب -->
+    <section class="about-section">
+        <img src="https://via.placeholder.com/280x350/222/fff?text=Hussein+Ahmed" alt="حسين أحمد" class="author-img">
+        
+        <div class="about-content">
+            <h1 class="author-name-calligraphy">حُسَيْن أَحْمَد</h1>
+            <p>كاتب عراقي ناشئ وطالب جامعي في قسم التمريض من بغداد.</p>
+            <p>شخصياً، أهوى الأعمال الفنية القصصية ذات طابع سينمائي وملحمي مثير، حالياً أسبوع بتأليف أعمال قصصية روائية وأهتم بتطوير أسلوب سردي وتحديث وتنسيق لون معاصر وجاد بالطرح.</p>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>حسين أحمد © 2026</p>
+    </footer>
+
+</body>
+</html>
             position: relative;
             padding: 12px;
             border: 2px solid var(--text-gold);
