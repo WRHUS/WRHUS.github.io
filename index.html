@@ -1,333 +1,620 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <!-- ========================================== -->
+    <!-- Meta Tags & SEO Configuration              -->
+    <!-- ========================================== -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حسين احمد - كاتب وروائي</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="الموقع الرسمي للكاتب والروائي حسين احمد. تعرف على آخر أعماله الروائية ومقالاته.">
+    <meta name="keywords" content="حسين احمد, كاتب عراقي, روايات, انعاش متهم, مقالات, كتب, أدب">
+    <meta name="author" content="حسين احمد">
+    
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="حسين احمد - كاتب وروائي">
+    <meta property="og:description" content="الموقع الرسمي للكاتب والروائي حسين احمد.">
+    <meta property="og:image" content="24177.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_AR">
+    
+    <title>حسين احمد | الصفحة الرئيسية</title>
+
+    <!-- ========================================== -->
+    <!-- Global CSS Styles                          -->
+    <!-- ========================================== -->
     <style>
-        /* 
-         * Global Styles & Constraints 
-         * Applying 900 font-weight and a stack of programming fonts
-         */
+        /* --- CSS Variables --- */
         :root {
-            --dark-bg: #1e1e24;
-            --darker-bg: #141418;
-            --light-bg: #f9f9fb;
-            --gold: #c5a059;
-            --maroon: #5a111a;
-            --text-light: #e0e0e0;
-            --text-dark: #222;
+            --color-background-main: #1e1e24;
+            --color-background-alt: #141418;
+            --color-background-light: #f9f9fb;
+            --color-primary-gold: #c5a059;
+            --color-primary-gold-dark: #a37d49;
+            --color-primary-maroon: #5a111a;
+            --color-primary-maroon-hover: #7a1723;
+            --color-text-light: #e0e0e0;
+            --color-text-muted: #cccccc;
+            --color-text-dark: #222222;
+            --color-border-subtle: rgba(255, 255, 255, 0.05);
+            
+            --spacing-small: 10px;
+            --spacing-medium: 20px;
+            --spacing-large: 40px;
+            --spacing-xlarge: 80px;
+
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-title: 'Brush Script MT', 'Arial Arabic', cursive, sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
+        /* --- CSS Reset (Expanded) --- */
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+            margin-left: 0;
+            padding-top: 0;
+            padding-right: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            border-top-width: 0;
+            border-right-width: 0;
+            border-bottom-width: 0;
+            border-left-width: 0;
+            border-style: none;
+            border-color: transparent;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
             box-sizing: border-box;
         }
 
+        /* HTML5 display-role reset */
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
         body {
-            /* Programming fonts with 900 weight */
-            font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', 'Courier New', monospace, sans-serif;
-            font-weight: 900;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
+            background-color: var(--color-background-main);
+            color: var(--color-text-light);
+            font-family: var(--font-main);
             line-height: 1.8;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        ol, ul {
+            list-style-type: none;
+            list-style-position: outside;
+            list-style-image: none;
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
         }
 
         a {
-            text-decoration: none;
+            text-decoration-line: none;
+            text-decoration-style: solid;
             color: inherit;
+            background-color: transparent;
         }
 
-        /* --- Header / Navbar --- */
-        header {
+        /* --- Animations --- */
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatAnimation {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Utility Classes for JS Observer */
+        .hidden-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .visible-element {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Header Styles --- */
+        .site-header {
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
+            padding-top: var(--spacing-medium);
+            padding-bottom: var(--spacing-medium);
+            padding-left: 5%;
+            padding-right: 5%;
             background-color: #1a1a1f;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            /* Force LTR display for correct visual alignment of logo on left, nav on right */
-            direction: ltr; 
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: var(--color-border-subtle);
+            direction: ltr;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            animation-name: fadeInDown;
+            animation-duration: 1s;
+            animation-fill-mode: both;
         }
 
-        .logo {
+        .site-logo {
             font-size: 1.5rem;
-            color: #fff;
+            color: #ffffff;
             letter-spacing: 1px;
+            font-weight: 700;
         }
 
-        nav {
-            direction: rtl; /* Switch back for reading Arabic menu items */
+        .main-nav {
+            direction: rtl;
         }
 
-        nav ul {
-            list-style: none;
+        .nav-list {
             display: flex;
+            flex-direction: row;
             gap: 25px;
         }
 
-        nav ul li {
-            font-size: 0.85rem;
-            color: #aaa;
-            transition: color 0.3s ease;
+        .nav-item {
+            font-size: 0.9rem;
+            color: #aaaaaa;
+            transition-property: color;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
             cursor: pointer;
+            position: relative;
         }
 
-        nav ul li:hover, nav ul li.active {
-            color: #fff;
+        .nav-item:hover {
+            color: #ffffff;
         }
 
-        .dropdown::after {
+        .nav-item.active {
+            color: #ffffff;
+        }
+
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-primary-gold);
+        }
+
+        .has-dropdown::after {
             content: ' ▼';
             font-size: 0.6rem;
             vertical-align: middle;
+            margin-right: 5px;
         }
 
-        /* --- Hero Section --- */
+        /* --- Hero Section Styles --- */
         .hero-section {
             display: flex;
+            flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            padding: 80px 8%;
-            background: linear-gradient(135deg, #1b1d22 0%, #292b33 100%);
+            padding-top: var(--spacing-xlarge);
+            padding-bottom: var(--spacing-xlarge);
+            padding-left: 8%;
+            padding-right: 8%;
+            background-image: linear-gradient(135deg, #1b1d22 0%, #292b33 100%);
             position: relative;
-            direction: ltr; /* Keeps text left, image right */
+            direction: ltr;
         }
 
-        .hero-text {
+        .hero-content {
             width: 45%;
             direction: rtl;
             text-align: right;
+            animation-name: fadeInUp;
+            animation-duration: 1s;
+            animation-delay: 0.3s;
+            animation-fill-mode: both;
         }
 
-        .hero-text p {
-            font-size: 1.1rem;
-            color: #cccccc;
-            margin-bottom: 30px;
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--color-text-muted);
+            margin-bottom: var(--spacing-large);
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            line-height: 2;
         }
 
         .btn-primary {
-            background-color: var(--maroon);
-            color: #fff;
-            border: 2px solid var(--gold);
-            padding: 10px 25px;
-            font-size: 0.9rem;
-            border-radius: 4px;
+            background-color: var(--color-primary-maroon);
+            color: #ffffff;
+            border-top-width: 2px;
+            border-right-width: 2px;
+            border-bottom-width: 2px;
+            border-left-width: 2px;
+            border-style: solid;
+            border-color: var(--color-primary-gold);
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 1rem;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            border-bottom-left-radius: 4px;
             cursor: pointer;
             font-family: inherit;
-            font-weight: 900;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: background 0.3s;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+            transition-property: background-color, transform, box-shadow;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
         }
 
         .btn-primary:hover {
-            background-color: #7a1723;
+            background-color: var(--color-primary-maroon-hover);
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 15px rgba(0,0,0,0.4);
         }
 
-        .hero-image-container {
-            width: 35%;
+        .hero-image-wrapper {
+            width: 45%;
             display: flex;
+            flex-direction: row;
             justify-content: center;
+            animation-name: fadeInUp;
+            animation-duration: 1s;
+            animation-delay: 0.5s;
+            animation-fill-mode: both;
         }
 
-        .hero-image-container img {
-            max-width: 280px;
+        .hero-book-cover {
+            max-width: 300px;
             width: 100%;
-            border: 8px solid var(--gold);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+            height: auto;
+            border-top-width: 8px;
+            border-right-width: 8px;
+            border-bottom-width: 8px;
+            border-left-width: 8px;
+            border-style: solid;
+            border-color: var(--color-primary-gold);
+            box-shadow: 0px 20px 40px rgba(0,0,0,0.8);
+            animation-name: floatAnimation;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
         }
 
-        /* --- Upcoming Works Section --- */
+        /* --- Upcoming Works (Bookshelf) --- */
         .upcoming-section {
-            background-color: var(--light-bg);
-            color: var(--text-dark);
+            background-color: var(--color-background-light);
+            color: var(--color-text-dark);
             text-align: center;
-            padding: 70px 5%;
+            padding-top: 90px;
+            padding-bottom: 90px;
+            padding-left: 5%;
+            padding-right: 5%;
         }
 
-        .upcoming-section h2 {
-            color: var(--maroon);
-            font-size: 2rem;
-            margin-bottom: 50px;
+        .section-title {
+            color: var(--color-primary-maroon);
+            font-size: 2.2rem;
+            margin-bottom: 60px;
+            font-weight: bold;
         }
 
-        .shelf-wrapper {
+        .shelf-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 0 auto;
-            max-width: 600px;
+            margin-top: 0;
+            margin-right: auto;
+            margin-bottom: 0;
+            margin-left: auto;
+            max-width: 700px;
         }
 
-        .books-container {
+        .books-row {
             display: flex;
-            gap: 20px;
+            flex-direction: row;
+            gap: 25px;
             align-items: flex-end;
-            margin-bottom: -5px; /* Pull books down to touch shelf */
+            margin-bottom: -5px; 
             z-index: 2;
+            position: relative;
         }
 
-        .book-mockup {
-            width: 90px;
-            height: 130px;
-            background: linear-gradient(to right, #f0f0f0 0%, #ffffff 15%, #e8e8e8 90%, #dcdcdc 100%);
-            border-radius: 2px 5px 5px 2px;
+        /* Detailed Book Mockup */
+        .book-blank {
+            width: 100px;
+            height: 140px;
+            background-image: linear-gradient(to right, #f0f0f0 0%, #ffffff 15%, #e8e8e8 90%, #dcdcdc 100%);
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
             box-shadow: -4px 4px 8px rgba(0,0,0,0.15), inset -2px 0 5px rgba(0,0,0,0.05);
-            border: 1px solid #ddd;
+            border-top-width: 1px;
+            border-right-width: 1px;
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            border-style: solid;
+            border-color: #dddddd;
+            transition-property: transform;
+            transition-duration: 0.3s;
         }
 
-        .shelf {
+        .book-blank:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Detailed Shelf */
+        .wooden-shelf {
             width: 100%;
-            height: 25px;
-            background: linear-gradient(to bottom, #a37d49 0%, #8b6331 100%);
-            border-top: 2px solid #d4b078;
-            box-shadow: 0 15px 20px -5px rgba(0,0,0,0.6);
+            height: 30px;
+            background-image: linear-gradient(to bottom, var(--color-primary-gold-dark) 0%, #8b6331 100%);
+            border-top-width: 3px;
+            border-top-style: solid;
+            border-top-color: #d4b078;
+            box-shadow: 0px 20px 25px -5px rgba(0,0,0,0.6);
             z-index: 1;
+            position: relative;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
         }
 
-        /* --- About Section --- */
+        /* --- About Author Section --- */
         .about-section {
             display: flex;
+            flex-direction: row;
             align-items: center;
             justify-content: space-around;
-            padding: 80px 8%;
-            /* Simulated dark marble background */
-            background: radial-gradient(circle at center, #272a33 0%, #111216 100%);
+            padding-top: 100px;
+            padding-bottom: 100px;
+            padding-left: 8%;
+            padding-right: 8%;
+            background-image: radial-gradient(circle at center, #272a33 0%, #111216 100%);
             position: relative;
-            direction: ltr; /* Keeps image left, text right */
+            direction: ltr; 
         }
 
-        .about-image {
-            width: 30%;
+        .author-image-wrapper {
+            width: 35%;
+            position: relative;
         }
 
-        .about-image img {
+        /* Decorative frame behind author image */
+        .author-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
             width: 100%;
-            border-radius: 4px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            filter: grayscale(100%);
+            height: 100%;
+            border-top-width: 2px;
+            border-right-width: 2px;
+            border-bottom-width: 2px;
+            border-left-width: 2px;
+            border-style: solid;
+            border-color: var(--color-primary-gold);
+            z-index: 0;
         }
 
-        .about-text {
+        .author-photo {
+            width: 100%;
+            height: auto;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+            box-shadow: 0px 15px 35px rgba(0,0,0,0.6);
+            filter: grayscale(100%);
+            position: relative;
+            z-index: 1;
+            transition-property: filter;
+            transition-duration: 0.5s;
+        }
+
+        .author-photo:hover {
+            filter: grayscale(0%);
+        }
+
+        .about-content {
             width: 50%;
             direction: rtl;
             text-align: right;
         }
 
-        .about-title {
-            color: var(--gold);
-            font-size: 3.5rem;
-            margin-bottom: 25px;
-            /* Using cursive fallback to simulate the calligraphy in the design */
-            font-family: 'Brush Script MT', cursive, sans-serif;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        .author-name {
+            color: var(--color-primary-gold);
+            font-size: 4rem;
+            margin-bottom: var(--spacing-large);
+            font-family: var(--font-title);
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+            letter-spacing: 2px;
         }
 
-        .about-text p {
-            font-size: 1.1rem;
+        .author-bio {
+            font-size: 1.15rem;
             color: #cfcfcf;
-            margin-bottom: 15px;
+            margin-bottom: var(--spacing-medium);
+            line-height: 2.2;
         }
 
-        /* --- Footer --- */
-        footer {
+        /* --- Footer Styles --- */
+        .site-footer {
             background-color: #0a0a0c;
-            color: #666;
+            color: #666666;
             text-align: center;
-            padding: 30px;
-            font-size: 0.9rem;
-            border-top: 1px solid #222;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 1rem;
+            border-top-width: 1px;
+            border-top-style: solid;
+            border-top-color: #222222;
         }
         
-        .footer-icon {
-            margin-top: 10px;
-            color: var(--gold);
-            font-size: 1.2rem;
+        .footer-copyright {
+            margin-bottom: 10px;
         }
 
-        /* Responsive Design */
-        @media (max-width: 850px) {
-            .hero-section, .about-section {
+        .footer-decoration {
+            margin-top: 15px;
+            color: var(--color-primary-gold);
+            font-size: 1.5rem;
+        }
+
+        /* --- Responsive Design (Media Queries) --- */
+        @media screen and (max-width: 992px) {
+            .hero-section {
                 flex-direction: column;
                 text-align: center;
+                padding-top: 60px;
+                padding-bottom: 60px;
             }
-            .hero-text, .hero-image-container, .about-text, .about-image {
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+            .hero-content, .hero-image-wrapper, .about-content, .author-image-wrapper {
                 width: 100%;
-                margin-bottom: 30px;
+                margin-bottom: 40px;
+            }
+            .hero-content {
+                direction: rtl;
                 text-align: center;
             }
-            .hero-text { direction: rtl; }
-            header { flex-direction: column; gap: 20px; }
-            nav ul { flex-wrap: wrap; justify-content: center; }
-            .books-container { flex-wrap: wrap; justify-content: center; gap: 10px; }
+            .about-content {
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+                gap: 20px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+            .nav-list {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .books-row {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .author-name {
+                font-size: 3rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="logo">حسين احمد</div>
-        <nav>
-            <ul>
-                <li class="active">الصفحة الرئيسية</li>
-                <li class="dropdown">الأعمال</li>
-                <li>حول حسين احمد</li>
-                <li>مقالات</li>
-                <li>أخبار وعروض</li>
-                <li>اتصال</li>
+    <!-- ========================================== -->
+    <!-- Header Area                                -->
+    <!-- ========================================== -->
+    <header class="site-header" role="banner">
+        <div class="site-logo" aria-label="شعار الموقع">حسين احمد</div>
+        <nav class="main-nav" role="navigation" aria-label="القائمة الرئيسية">
+            <ul class="nav-list">
+                <li class="nav-item active">الصفحة الرئيسية</li>
+                <li class="nav-item has-dropdown" aria-haspopup="true">الأعمال</li>
+                <li class="nav-item">حول حسين احمد</li>
+                <li class="nav-item">مقالات</li>
+                <li class="nav-item">أخبار وعروض</li>
+                <li class="nav-item">اتصال</li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main Hero Section -->
-    <section class="hero-section">
-        <div class="hero-text">
-            <p>عقب رحيل شخصية سياسية ثقيلة إثر جراحة ناجحة. تتحول أروقة الشفاء إلى مسرح لتصفية الحسابات بين تقارير تحذف وشائعات تصنع للإعلام وتهم معدة مسبقاً. يجد جراح بين جدران الخداع ويواجه عقوبة الإعدام لجريمة دولية.</p>
-            <button class="btn-primary">نبذة عن الرواية</button>
-        </div>
-        <div class="hero-image-container">
-            <!-- Referencing the provided file verbatim -->
-            <img src="24177.png" alt="غلاف الرواية - انعاش متهم">
-        </div>
-    </section>
-
-    <!-- Upcoming Works (Bookshelf) -->
-    <section class="upcoming-section">
-        <h2>أعمال قادمة</h2>
-        <div class="shelf-wrapper">
-            <div class="books-container">
-                <div class="book-mockup"></div>
-                <div class="book-mockup"></div>
-                <div class="book-mockup"></div>
-                <div class="book-mockup"></div>
+    <!-- ========================================== -->
+    <!-- Main Content Area                          -->
+    <!-- ========================================== -->
+    <main role="main">
+        
+        <!-- Hero Section -->
+        <section class="hero-section" aria-labelledby="hero-heading">
+            <div class="hero-content">
+                <h1 id="hero-heading" style="display:none;">رواية انعاش متهم - حسين احمد</h1>
+                <p class="hero-description">
+                    عقب رحيل شخصية سياسية ثقيلة إثر جراحة ناجحة. تتحول أروقة الشفاء إلى مسرح لتصفية الحسابات بين تقارير تحذف وشائعات تصنع للإعلام وتهم معدة مسبقاً. يجد جراح بين جدران الخداع ويواجه عقوبة الإعدام لجريمة دولية.
+                </p>
+                <button class="btn-primary" aria-label="اقرأ المزيد عن الرواية">نبذة عن الرواية</button>
             </div>
-            <div class="shelf"></div>
-        </div>
-    </section>
+            <div class="hero-image-wrapper">
+                <!-- استخدام الصورة المطلوبة حرفياً -->
+                <img src="24177.png" alt="غلاف رواية انعاش متهم للكاتب حسين احمد" class="hero-book-cover">
+            </div>
+        </section>
 
-    <!-- About Author Section -->
-    <section class="about-section">
-        <div class="about-image">
-            <!-- Referencing the provided file verbatim again for the author portrait placeholder -->
-            <img src="24177.png" alt="صورة الكاتب حسين احمد">
-        </div>
-        <div class="about-text">
-            <h1 class="about-title">حسين احمد</h1>
-            <p>كاتب عراقي ناشئ وطالب جامعي في قسم التمريض من بغداد.</p>
-            <p>شخصيا، اهوى اعمال الفنية القصصية ذات طابع سينمائي وملحمي مثير،</p>
-            <p>حاليا اقوم بتأليف أعمال قصصية روائية واهتم بتطوير أسلوب سردي وتقديم لون معاصر وجاد بالطرح.</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>حسين احمد &copy; 2026</p>
-        <div class="footer-icon">❖</div>
-    </footer>
-
-</body>
-</html>
+        <!-- Upcoming Works Section -->
+        <section class="upcoming-section hidden-element" aria-labelledby="upcoming-heading">
+            <h2 id="upcoming-heading" class="section-title">أعمال قادمة</h2>
+            <div class="shelf-container">
+                <div class="books-row">
+                    <div class="book-blank" aria-hidden="true"></div>
+                    <div class="book-blank" aria-hidden="true"></div>
+                    <div class="book-blank" aria-hidden="true"></div>
+                    <div class="book-blank" aria-hidden="true"></div>
+                </div>
+                <div class="wooden-shelf" aria-hidden="true"></div>
+       
