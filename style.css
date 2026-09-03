@@ -1,21 +1,17 @@
 /* ==========================================================================
-   إعدادات عامة (Reset & Variables)
+   إعدادات عامة 
    ========================================================================== */
-   :root {
-    /* الألوان المستوحاة من التصميم المرفق */
-    --primary-dark: #12151c; /* لون الخلفية الداكن */
+:root {
+    --primary-dark: #12151c;
     --secondary-dark: #1f232e;
-    --gold-accent: #c19b6c; /* اللون الذهبي للأزرار والإطارات */
+    --gold-accent: #c19b6c;
     --gold-hover: #e0b885;
     --text-light: #e2e2e2;
     --text-muted: #a0a0a0;
     --white: #ffffff;
-    --red-dark: #4a0d0d; /* لون الزر */
-    --red-hover: #6a1313;
-    
-    /* الخطوط */
-    --font-heading: 'Amiri', serif; /* للخطوط الكلاسيكية والرسمية */
-    --font-body: 'Cairo', sans-serif; /* للنصوص العادية لتكون مقروءة بوضوح */
+    --red-dark: #4a0d0d;
+    --font-heading: 'Amiri', serif;
+    --font-body: 'Cairo', sans-serif;
 }
 
 * {
@@ -25,7 +21,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* حركة تنقل ناعمة بين الأقسام */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -33,7 +29,7 @@ body {
     background-color: var(--primary-dark);
     color: var(--text-light);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* يمنع ظهور شريط التمرير الأفقي المزعج */
 }
 
 .container {
@@ -44,7 +40,7 @@ body {
 }
 
 /* ==========================================================================
-   شريط القوائم (Navbar)
+   شريط القوائم
    ========================================================================== */
 .navbar {
     background-color: rgba(18, 21, 28, 0.95);
@@ -64,7 +60,8 @@ body {
 .nav-links ul {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -72,11 +69,10 @@ body {
     text-decoration: none;
     font-size: 15px;
     font-weight: 600;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a:hover, .nav-links a.active {
     color: var(--gold-accent);
 }
 
@@ -86,37 +82,35 @@ body {
     font-family: var(--font-heading);
     font-size: 24px;
     font-weight: bold;
-    letter-spacing: 1px;
 }
 
 /* ==========================================================================
-   القسم الأول: الرواية (Hero Section)
+   القسم الأول: الرواية
    ========================================================================== */
 .hero-section {
-    /* يجب توفير صورة خلفية داكنة هنا في مجلد assets */
     background-image: url('assets/top-background.jpg'); 
     background-size: cover;
     background-position: center;
-    padding: 100px 0;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
+    padding: 80px 0;
+    min-height: auto; /* تم التعديل ليناسب الهواتف */
 }
 
 .hero-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
+    gap: 40px;
+    flex-wrap: wrap; /* يسمح بنزول العناصر تحت بعضها في الموبايل */
 }
 
 .hero-content {
     flex: 1;
+    min-width: 300px;
 }
 
 .novel-description {
     font-family: var(--font-heading);
-    font-size: 22px;
+    font-size: clamp(18px, 4vw, 24px); /* حجم خط ديناميكي يتغير مع حجم الشاشة */
     line-height: 1.8;
     color: var(--gold-accent);
     margin-bottom: 30px;
@@ -130,112 +124,100 @@ body {
     border: 1px solid var(--gold-accent);
     padding: 12px 35px;
     text-decoration: none;
-    font-family: var(--font-body);
     font-weight: bold;
     border-radius: 5px;
-    transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-}
-
-.btn-primary:hover {
-    background: linear-gradient(to bottom, #6a1818, #4a0d0d);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.7);
-    transform: translateY(-2px);
+    transition: 0.3s;
 }
 
 .hero-image {
     flex: 1;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center; /* توسيط الإطار دائماً */
+    width: 100%;
 }
 
 .frame-container {
     position: relative;
-    width: 350px;
-    height: 500px;
+    width: 100%;
+    max-width: 350px; /* لن يتجاوز هذا الحجم، لكنه سيصغر في الموبايل */
+    aspect-ratio: 0.7; /* يحافظ على نسبة طول الإطار إلى عرضه بدون تشوه */
 }
 
 .frame-img {
     width: 100%;
     height: 100%;
+    object-fit: contain;
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
+    top: 0; left: 0; z-index: 2;
 }
 
 .book-cover-img {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    width: 85%; /* يتم التعديل بناءً على عرض الإطار */
-    height: 85%;
+    width: 82%; 
+    height: 82%;
     z-index: 1;
-    box-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
 
 /* ==========================================================================
-   القسم الثاني: الأعمال القادمة (Upcoming Works)
+   القسم الثاني: الأعمال القادمة
    ========================================================================== */
 .upcoming-works-section {
-    background-color: #f7f7f7; /* الخلفية البيضاء المتداخلة */
-    padding: 80px 0 150px 0;
+    background-color: #f7f7f7;
+    padding: 60px 0 100px 0; /* تقليل المسافات الفارغة */
     text-align: center;
-    position: relative;
 }
 
 .section-title {
     color: #4a0d0d;
     font-family: var(--font-heading);
-    font-size: 32px;
-    margin-bottom: 60px;
+    font-size: clamp(24px, 5vw, 32px);
+    margin-bottom: 40px;
 }
 
 .shelf-container {
-    position: relative;
     width: 100%;
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
+    position: relative;
 }
 
 .books-grid {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-bottom: -15px; /* لجعل الكتب ترتكز على الرف */
+    gap: clamp(10px, 3vw, 30px);
+    margin-bottom: -10px;
     position: relative;
     z-index: 2;
 }
 
 .blank-book {
-    width: 120px;
-    height: 180px;
+    width: clamp(60px, 15vw, 120px);
+    height: clamp(90px, 22vw, 180px);
     background-color: #ffffff;
-    box-shadow: -5px 5px 15px rgba(0,0,0,0.2), inset -2px 0 5px rgba(0,0,0,0.05);
+    box-shadow: -3px 3px 10px rgba(0,0,0,0.15);
     border-radius: 2px 5px 5px 2px;
-    border-right: 3px solid #eee; /* لتجسيم شكل الكتاب */
+    border-right: 2px solid #eee;
 }
 
 .shelf-img {
-    width: 110%;
+    width: 100%;
+    height: auto;
     position: relative;
-    left: -5%;
     z-index: 1;
-    filter: drop-shadow(0 15px 10px rgba(0,0,0,0.3));
 }
 
 /* ==========================================================================
-   القسم الثالث: السيرة الذاتية (About Section)
+   القسم الثالث: السيرة الذاتية
    ========================================================================== */
 .about-section {
-    /* يجب توفير صورة الخلفية الرخامية هنا */
     background-image: url('assets/marble-background.jpg');
     background-size: cover;
-    background-position: top right;
-    padding: 0 0 100px 0;
+    background-position: top center;
+    padding: 60px 0; /* مسافات نظيفة بدل الهوامش السلبية */
     position: relative;
-    margin-top: -80px; /* لدمج القسم الأبيض مع الرخامي كالتصميم */
     z-index: 3;
 }
 
@@ -244,108 +226,104 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 40px;
+    flex-wrap: wrap; /* للنزول في شاشات الموبايل */
 }
 
 .about-image {
     flex: 1;
-    margin-top: -150px; /* لرفع الصورة فوق الخلفية البيضاء كالتصميم */
-    z-index: 4;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .profile-img {
     width: 100%;
-    max-width: 400px;
-    box-shadow: -10px 10px 30px rgba(0,0,0,0.5);
-    border: 5px solid rgba(255,255,255,0.05);
+    max-width: 350px;
+    box-shadow: -5px 5px 20px rgba(0,0,0,0.5);
+    border: 3px solid rgba(255,255,255,0.1);
 }
 
 .about-content {
-    flex: 1.2;
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-top: 80px;
+    min-width: 300px;
 }
 
 .calligraphy-logo {
-    width: 250px;
-    margin-bottom: 30px;
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.6));
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 20px;
 }
 
 .bio-text {
-    font-family: var(--font-body);
-    font-size: 18px;
+    font-size: clamp(15px, 3vw, 18px);
     color: var(--gold-accent);
-    line-height: 1.9;
+    line-height: 1.8;
     text-align: right;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
 /* ==========================================================================
-   التذييل (Footer)
+   التذييل
    ========================================================================== */
 .footer {
     background-color: #0a0b0f;
     text-align: center;
-    padding: 30px 0;
+    padding: 20px 0;
     color: var(--text-muted);
-    font-size: 14px;
-    position: relative;
-    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-.footer-decoration {
-    margin-top: 15px;
-}
-
-.ornament {
-    width: 30px;
-    opacity: 0.5;
-}
+.ornament { width: 30px; opacity: 0.5; margin-top: 10px; }
 
 /* ==========================================================================
-   التوافق مع شاشات الهواتف المحمولة (Responsive Design)
+   تعديلات خاصة بشاشات الموبايل فقط (إصلاح الانهيار)
    ========================================================================== */
-@media screen and (max-width: 992px) {
-    .nav-links ul {
-        display: none; /* يمكن إضافة قائمة هامبرغر لاحقاً برمجياً */
+@media screen and (max-width: 768px) {
+    /* إخفاء القائمة العلوية لتوفير المساحة بالموبايل */
+    .nav-links { display: none; }
+    .nav-container { justify-content: center; }
+
+    /* توسيط محتوى الرواية في الموبايل */
+    .hero-container {
+        flex-direction: column-reverse; /* يجعل صورة الرواية فوق النص في الموبايل */
+        text-align: center;
     }
-    
-    .hero-container, .about-container {
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* توسيط السيرة الذاتية */
+    .about-container {
         flex-direction: column;
         text-align: center;
     }
-    
-    .hero-content {
-        order: 2;
+    .about-content {
+        align-items: center;
     }
-    
-    .hero-image {
-        order: 1;
-        justify-content: center;
-        margin-bottom: 40px;
+    .bio-text {
+        text-align: center; /* توسيط النص بدل المحاذاة لليمين */
     }
-    
+
+    /* إزالة تأثير التداخل (Overlap) في الموبايل لأنه يسبب مشاكل */
+    .about-section {
+        margin-top: 0;
+    }
     .about-image {
         margin-top: 0;
     }
-    
-    .about-content {
-        align-items: center;
-        padding-top: 30px;
+}
+
+/* تأثير التداخل لشاشات الكمبيوتر فقط (Desktop Overlap) */
+@media screen and (min-width: 993px) {
+    .about-section {
+        margin-top: -80px; 
+        padding: 0 0 100px 0;
     }
-    
-    .bio-text {
-        text-align: center;
+    .about-image {
+        margin-top: -150px; 
     }
-    
-    .books-grid {
-        gap: 15px;
-    }
-    
-    .blank-book {
-        width: 70px;
-        height: 110px;
-    }
-    }
+}
