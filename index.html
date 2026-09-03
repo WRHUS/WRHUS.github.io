@@ -1,103 +1,165 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حسين احمد</title>
-    
-    <link rel="stylesheet" href="style.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarah Vaughan</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="container nav-container">
-            <nav class="nav-links">
-                <ul>
-                    <li><a href="#home" class="active">الصفحة الرئيسية</a></li>
-                    <li><a href="#works">الأعمال</a></li>
-                    <li><a href="#about">حول حسين احمد</a></li>
-                    <li><a href="#articles">مقالات</a></li>
-                    <li><a href="#news">أخبار وعروض</a></li>
-                    <li><a href="#contact">اتصال</a></li>
-                </ul>
-            </nav>
-            <div class="logo">
-                <a href="#home">حسين احمد</a>
-            </div>
+  <!-- ================= 1. HEADER (القائمة العلوية) ================= -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-title">
+        <a href="/">Sarah Vaughan</a>
+      </div>
+      
+      <nav class="desktop-nav">
+        <!-- قسم الكتب يحتوي على قائمة منسدلة كما في الموقع الأصلي -->
+        <div class="nav-item has-dropdown">
+          <a href="/books">Books</a>
+          <div class="dropdown">
+            <a href="/anatomy">Anatomy Of A Scandal (TV)</a>
+            <a href="/little-disasters">Little Disasters (TV)</a>
+          </div>
         </div>
-    </header>
+        <div class="nav-item"><a href="/about">About</a></div>
+        <div class="nav-item"><a href="/blog">Blog</a></div>
+        <div class="nav-item"><a href="/contact">Contact</a></div>
+      </nav>
 
-    <section id="home" class="hero-section">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <p class="novel-description">
-                    عقب رحيل شخصية سياسية ثقيلة إثر جراحة ناجحة،<br>
-                    تتحول أروقة الشفاء إلى مسرح لتصفية الحسابات بين تقارير<br>
-                    تحذف وشائعات تصنع للإعلام وتهم معدة مسبقاً. يجد جراح<br>
-                    بين جدران الخداع ويواجه عقوبة الإعدام لجريمة دولية.
-                </p>
-                <a href="#novel-details" class="btn-primary">نبذة عن الرواية</a>
-            </div>
-            
-            <div class="hero-image">
-                <div class="frame-container">
-                    <img src="assets/frame.png" alt="إطار ذهبي" class="frame-img">
-                    <img src="assets/book-cover.png" alt="غلاف رواية إنعاش متهم" class="book-cover-img">
-                </div>
-            </div>
+      <!-- زر القائمة للهواتف -->
+      <button class="mobile-menu-toggle" aria-label="Open Menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT (محتوى الصفحة الرئيسي) ================= -->
+  <main class="site-main">
+
+    <!-- Section 1: Hero / New Book (القسم الأول: الإصدار الجديد) -->
+    <section class="hero-section text-center">
+      <div class="content-wrapper">
+        <p class="release-date">OUT 27 AUGUST 2026</p>
+        
+        <blockquote class="review-quote">
+          “Expertly plotted and crackling with tension, this is dysfunctional family psychodrama at its unputdownable best.” <br>
+          <cite>— GUARDIAN</cite>
+        </blockquote>
+        
+        <p class="book-description">The compelling new novel about power, money and lies from the author of Anatomy of a Scandal.</p>
+        
+        <a href="/learn-more" class="link-arrow">Learn More ⟶</a>
+        
+        <div class="button-group">
+          <a href="/order" class="btn primary-btn">ORDER NOW</a>
         </div>
+      </div>
     </section>
 
-    <section id="works" class="upcoming-works-section">
-        <div class="container">
-            <h2 class="section-title">أعمال قادمة</h2>
-            
-            <div class="shelf-container">
-                <div class="books-grid">
-                    <div class="blank-book"></div>
-                    <div class="blank-book"></div>
-                    <div class="blank-book"></div>
-                    <div class="blank-book"></div>
-                </div>
-                <img src="assets/shelf.png" alt="رف الكتب" class="shelf-img">
-            </div>
+    <!-- Section 2: Little Disasters Series (قسم مسلسل الكوارث الصغيرة) -->
+    <section class="feature-section split-layout">
+      <div class="content-wrapper">
+        <div class="text-content">
+          <p class="tagline">now A six-part series on paramount+</p>
+          <h2 class="section-title">little disasters</h2>
+          <p>Based on the bestselling novel by Sarah Vaughan, Little Disasters is a psychological thriller with a mystery at its heart about motherhood and judgment. From the multi BAFTA award-winning production company, Roughcut TV, this six-part series stars Diane Kruger, Jo Joyner, JJ Feild, Shelley Conn, Emily Taaffe, Stephen Campbell Moore, Ben Bailey Smith and Patrick Baladi.</p>
+          <div class="button-group">
+            <a href="/buy" class="btn outline-btn">Buy The Book</a>
+            <a href="/watch" class="btn outline-btn">Watch On Paramount+</a>
+          </div>
         </div>
+        <div class="image-content">
+          <!-- ضع رابط صورة غلاف المسلسل هنا -->
+          <img src="images/little-disasters-tv.jpg" alt="Little Disasters Series">
+        </div>
+      </div>
     </section>
 
-    <section id="about" class="about-section">
-        <div class="container about-container">
-            <div class="about-image">
-                <img src="assets/profile.png" alt="صورة حسين احمد" class="profile-img">
-            </div>
-            
-            <div class="about-content">
-                <img src="assets/arabic-calligraphy-logo.png" alt="مخطوطة حسين احمد" class="calligraphy-logo">
-                
-                <p class="bio-text">
-                    كاتب عراقي ناشئ وطالب جامعي في قسم<br>
-                    التمريض من بغداد.<br>
-                    شخصيا، اهوى الاعمال الفنية القصصية ذات<br>
-                    طابع سينمائي وملحمي مثير،<br>
-                    حاليا اقوم بتأليف أعمال قصصية<br>
-                    روائية واهتم بتطوير أسلوب سردي وتقديم<br>
-                    لون معاصر وجاد بالطرح.
-                </p>
-            </div>
+    <!-- Section 3: Anatomy of a Scandal Series (قسم مسلسل تشريح فضيحة) -->
+    <section class="feature-section split-layout reverse">
+      <div class="content-wrapper">
+        <div class="text-content">
+          <p class="tagline">now a global #1 series on netflix</p>
+          <h2 class="section-title">ANATOMY OF A SCANDAL</h2>
+          <p>Sophie's privileged life as the wife of powerful politician James unravels when scandalous secrets surface — and he stands accused of a shocking crime.</p>
+          <p>Based on the hit novel by Sarah Vaughan, the exhilarating new series stars Sienna Miller, Rupert Friend, Michelle Dockery and Naomi Scott.</p>
+          <div class="button-group">
+            <a href="/buy" class="btn outline-btn">Buy The Book</a>
+            <a href="/watch" class="btn outline-btn">Watch On Netflix</a>
+          </div>
         </div>
+        <div class="image-content">
+          <!-- ضع رابط صورة غلاف نتفلكس هنا -->
+          <img src="images/anatomy-tv.jpg" alt="Anatomy of a Scandal Series">
+        </div>
+      </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <p>حسين احمد &copy; 2026</p>
-            <div class="footer-decoration">
-                <img src="assets/ornament.png" alt="زخرفة" class="ornament">
-            </div>
+    <!-- Section 4: About Author (قسم عن الكاتبة) -->
+    <section class="about-section split-layout">
+      <div class="content-wrapper">
+        <div class="image-content author-photo">
+          <img src="images/sarah-vaughan.jpg" alt="Sarah Vaughan Photo by Cat Morley">
+          <span class="photo-credit">Photo by Cat Morley</span>
         </div>
-    </footer>
+        <div class="text-content">
+          <h2 class="section-title">ABOUT SARAH VAUGHAN</h2>
+          <p>Sarah Vaughan is a Sunday Times and international best-selling author. Before writing fiction, Sarah spent 15 years as a journalist, including 11 at the Guardian as a political correspondent and news reporter: great preparation for thrillers exploring power, privilege and misogyny, and incorporating police investigations and criminal trials.</p>
+          <a href="/about" class="link-arrow">Learn More ⟶</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Book Grid / Explore (قسم شبكة الكتب) -->
+    <section class="books-grid-section">
+      <div class="content-wrapper">
+        <h2 class="section-title text-center">EXPLORE TITLES BY SARAH VAUGHAN</h2>
+        
+        <div class="grid-container">
+          
+          <!-- كتاب 1 -->
+          <div class="grid-item">
+            <img src="images/reputation.jpg" alt="Reputation Book Cover">
+            <h3>REPUTATION</h3>
+            <a href="/order" class="btn text-btn">ORDER NOW</a>
+          </div>
+
+          <!-- كتاب 2 -->
+          <div class="grid-item">
+            <img src="images/little-disasters-book.jpg" alt="Little Disasters Book Cover">
+            <h3>LITTLE DISASTERS</h3>
+            <a href="/order" class="btn text-btn">Order Now</a>
+          </div>
+
+          <!-- كتاب 3 -->
+          <div class="grid-item">
+            <img src="images/anatomy-book.jpg" alt="Anatomy of a Scandal Book Cover">
+            <h3>ANATOMY OF A SCANDAL</h3>
+            <a href="/order" class="btn text-btn">Order Now</a>
+          </div>
+
+          <!-- كتاب 4 -->
+          <div class="grid-item">
+            <img src="images/earlier-titles.jpg" alt="Earlier Titles">
+            <h3>EARLIER TITLES</h3>
+            <a href="/books" class="btn text-btn">View Titles</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER (تذييل الموقع) ================= -->
+  <footer class="site-footer">
+    <div class="footer-inner text-center">
+      <p>© 2026 Sarah Vaughan. All Rights Reserved</p>
+    </div>
+  </footer>
 
 </body>
 </html>
