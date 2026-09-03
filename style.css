@@ -1,415 +1,1188 @@
-/* ==========================================================================
-   1. المتغيرات والخطوط (Variables & Fonts)
-   استخدام خطوط Google Fonts لمحاكاة الخطوط الكلاسيكية والحديثة في الموقع
-   ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+/* ================================================================
+   RESET
+   ================================================================ */
 
-:root {
-  --bg-color: #ffffff;
-  --bg-secondary: #fcfbf9; /* لون خلفية ناعم للأقسام المتعاقبة */
-  --text-main: #111111;
-  --text-muted: #555555;
-  --font-serif: 'Playfair Display', serif; /* للـ Quotes والنصوص الكلاسيكية */
-  --font-sans: 'Inter', sans-serif; /* للعناوين، القوائم، والأزرار */
-  --max-width: 1200px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* ==========================================================================
-   2. الإعدادات الأساسية (Reset & Base Styles)
-   ========================================================================== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-sans);
-  color: var(--text-main);
-  background-color: var(--bg-color);
-  line-height: 1.6;
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased; /* لجعل الخطوط ناعمة كشاشات الماك */
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+    direction: rtl;
+    overflow-x: hidden;
+    background: #f7f6f3;
+    color: #222;
+    font-family: "Amiri", "Noto Naskh Arabic", "Tahoma", serif;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
-  transition: opacity 0.3s ease;
+    color: inherit;
+    text-decoration: none;
 }
 
-.content-wrapper {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 5%;
+img {
+    display: block;
+    max-width: 100%;
 }
 
-.text-center {
-  text-align: center;
+button {
+    font-family: inherit;
 }
 
-/* ==========================================================================
-   3. الطباعة والعناوين (Typography)
-   ========================================================================== */
-.section-title {
-  font-family: var(--font-sans);
-  font-size: 24px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 25px;
-  font-weight: 600;
+
+/* ================================================================
+   VARIABLES
+   ================================================================ */
+
+:root {
+
+    --black: #171717;
+    --navbar-black: #191919;
+
+    --cream: #e5d2ae;
+    --gold: #c9a36a;
+    --gold-light: #e3c38e;
+
+    --dark-blue: #202831;
+    --dark-blue-2: #1b232c;
+
+    --marble: #161b23;
+
+    --white-section: #f7f6f3;
+
+    --red: #721d17;
+    --red-dark: #4e100d;
+
+    --max-width: 1200px;
 }
 
-.tagline, .release-date {
-  font-family: var(--font-sans);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--text-muted);
-  margin-bottom: 15px;
-  font-weight: 500;
+
+/* ================================================================
+   PAGE
+   ================================================================ */
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
-.review-quote {
-  font-family: var(--font-serif);
-  font-size: 36px;
-  line-height: 1.3;
-  margin: 0 auto 30px;
-  max-width: 850px;
+
+/* ================================================================
+   NAVBAR
+   ================================================================ */
+
+.navbar {
+    position: relative;
+    z-index: 1000;
+
+    width: 100%;
+    height: 80px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #1c1c1c 0%,
+            #171717 100%
+        );
+
+    border-bottom: 1px solid rgba(255,255,255,0.025);
+
+    color: #d7c6a6;
 }
 
-.review-quote cite {
-  display: block;
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-top: 25px;
-  color: var(--text-muted);
-  font-weight: 600;
+.navbar-inner {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.book-description {
-  font-size: 18px;
-  max-width: 600px;
-  margin: 0 auto 30px;
-  color: var(--text-muted);
+
+/* ================================================================
+   LOGO
+   ================================================================ */
+
+.site-logo {
+    direction: rtl;
+
+    font-size: 30px;
+    line-height: 1;
+
+    color: #d8c7a8;
+
+    font-weight: 400;
+
+    white-space: nowrap;
+
+    transition: opacity 0.3s ease;
 }
 
-.link-arrow {
-  display: inline-block;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 18px;
-  margin: 20px 0;
+.site-logo:hover {
+    opacity: 0.8;
 }
 
-.link-arrow:hover {
-  opacity: 0.6;
+
+/* ================================================================
+   NAVIGATION
+   ================================================================ */
+
+.main-navigation {
+    height: 100%;
 }
 
-/* ==========================================================================
-   4. الأزرار (Buttons)
-   ========================================================================== */
-.button-group {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-top: 30px;
+.navigation-list {
+    list-style: none;
+
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 26px;
 }
 
-.hero-section .button-group {
-  justify-content: center;
+.navigation-item {
+    position: relative;
+
+    height: 100%;
+
+    display: flex;
+    align-items: center;
 }
 
-.btn {
-  display: inline-block;
-  padding: 14px 32px;
-  font-family: var(--font-sans);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.navigation-link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    height: 100%;
+
+    color: #cdbd9e;
+
+    font-size: 15px;
+    font-weight: 400;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease,
+        opacity 0.25s ease;
 }
 
-.primary-btn {
-  background-color: var(--text-main);
-  color: #fff;
-  border: 1px solid var(--text-main);
+.navigation-link:hover {
+    color: #e8d6b2;
 }
 
-.primary-btn:hover {
-  background-color: transparent;
-  color: var(--text-main);
+.navigation-link.active {
+    color: #d9c6a2;
 }
 
-.outline-btn {
-  background-color: transparent;
-  color: var(--text-main);
-  border: 1px solid var(--text-main);
+
+/* ================================================================
+   DROPDOWN
+   ================================================================ */
+
+.dropdown-icon {
+    position: relative;
+
+    top: -2px;
+
+    font-size: 15px;
+
+    opacity: 0.85;
 }
 
-.outline-btn:hover {
-  background-color: var(--text-main);
-  color: #fff;
+.navigation-dropdown {
+    position: absolute;
+
+    top: 74px;
+    right: 0;
+
+    min-width: 180px;
+
+    padding: 8px 0;
+
+    background: #1b1b1b;
+
+    border: 1px solid rgba(201,163,106,0.18);
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-7px);
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease;
 }
 
-.text-btn {
-  padding: 0;
-  padding-bottom: 4px;
-  border: none;
-  background: none;
-  border-bottom: 1px solid var(--text-main);
+.navigation-item-dropdown:hover .navigation-dropdown {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
 }
 
-.text-btn:hover {
-  color: var(--text-muted);
-  border-color: var(--text-muted);
+.dropdown-item {
+    display: block;
+
+    padding: 10px 18px;
+
+    color: #d2c0a0;
+
+    font-size: 14px;
+
+    transition: background 0.2s ease;
 }
 
-/* ==========================================================================
-   5. الهيدر والقائمة (Header & Navigation)
-   ========================================================================== */
-.site-header {
-  padding: 35px 0;
-  background-color: var(--bg-color);
-  position: sticky; /* لجعل القائمة تلحق المستخدم عند النزول */
-  top: 0;
-  z-index: 1000;
+.dropdown-item:hover {
+    background: rgba(255,255,255,0.05);
 }
 
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.site-title {
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
+/* ================================================================
+   MOBILE BUTTON
+   ================================================================ */
 
-.desktop-nav {
-  display: flex;
-  align-items: center;
-  gap: 35px;
-}
+.mobile-menu-button {
+    display: none;
 
-.nav-item > a {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-weight: 500;
-}
+    width: 38px;
+    height: 38px;
 
-.nav-item > a:hover {
-  opacity: 0.5;
-}
+    border: 0;
+    background: transparent;
 
-/* القائمة المنسدلة (Dropdown) */
-.has-dropdown {
-  position: relative;
-  padding-bottom: 10px;
-}
+    cursor: pointer;
 
-.dropdown {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  top: 100%;
-  left: -20px;
-  background-color: var(--bg-color);
-  min-width: 240px;
-  padding: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-  transform: translateY(10px);
-}
-
-.has-dropdown:hover .dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.dropdown a {
-  display: block;
-  font-size: 13px;
-  margin-bottom: 15px;
-  color: var(--text-muted);
-}
-
-.dropdown a:last-child {
-  margin-bottom: 0;
-}
-
-.dropdown a:hover {
-  color: var(--text-main);
-}
-
-/* زر الهواتف (مخفي في الشاشات الكبيرة) */
-.mobile-menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-}
-
-.hamburger, .hamburger::before, .hamburger::after {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background-color: var(--text-main);
-  position: relative;
-  transition: 0.3s;
-}
-
-.hamburger::before { content: ''; top: -7px; }
-.hamburger::after { content: ''; top: 7px; }
-
-/* ==========================================================================
-   6. الأقسام وتخطيط الصفحة (Sections & Layouts)
-   ========================================================================== */
-section {
-  padding: 100px 0;
-}
-
-/* القسم الأول Hero */
-.hero-section {
-  padding: 120px 0 100px;
-}
-
-/* تخطيط الانقسام (Split Layout) */
-.split-layout .content-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 8%; /* مسافة ممتازة بين الصورة والنص */
-}
-
-.split-layout.reverse .content-wrapper {
-  flex-direction: row-reverse;
-}
-
-.split-layout .text-content, 
-.split-layout .image-content {
-  flex: 1; /* يأخذ كل منهما 50% من المساحة */
-}
-
-.split-layout p {
-  color: var(--text-muted);
-  margin-bottom: 20px;
-}
-
-.photo-credit {
-  display: block;
-  font-size: 10px;
-  color: #999;
-  text-align: right;
-  margin-top: 8px;
-}
-
-/* قسم شبكة الكتب (Grid) */
-.books-grid-section {
-  background-color: var(--bg-secondary);
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 أعمدة في الشاشات الكبيرة */
-  gap: 30px;
-  margin-top: 60px;
-}
-
-.grid-item {
-  text-align: center;
-}
-
-.grid-item img {
-  margin: 0 auto 25px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08); /* ظل خفيف للكتب يعطي طابعاً احترافياً */
-  transition: transform 0.4s ease;
-}
-
-.grid-item:hover img {
-  transform: translateY(-8px); /* حركة خفيفة للأعلى عند التمرير */
-}
-
-.grid-item h3 {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-}
-
-/* ==========================================================================
-   7. الفوتر (Footer)
-   ========================================================================== */
-.site-footer {
-  padding: 50px 0;
-  font-size: 12px;
-  letter-spacing: 1px;
-  color: var(--text-muted);
-}
-
-/* ==========================================================================
-   8. التوافق مع الهواتف والأجهزة اللوحية (Responsive / Media Queries)
-   ========================================================================== */
-
-/* أجهزة الآيباد والشاشات المتوسطة */
-@media (max-width: 1024px) {
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr); /* تحويل شبكة الكتب إلى عمودين */
-    row-gap: 50px;
-  }
-  
-  .split-layout .content-wrapper {
-    gap: 5%;
-  }
-}
-
-/* الهواتف الذكية (Mobile) */
-@media (max-width: 768px) {
-  .desktop-nav {
-    display: none; /* إخفاء القائمة العادية في الهاتف */
-  }
-  
-  .mobile-menu-toggle {
-    display: block; /* إظهار زر Hamburger */
-  }
-
-  section {
-    padding: 60px 0;
-  }
-
-  .review-quote {
-    font-size: 24px;
-  }
-
-  /* تحويل التخطيط المنقسم إلى عمودي (صورة فوق والنص تحت) */
-  .split-layout .content-wrapper,
-  .split-layout.reverse .content-wrapper {
     flex-direction: column;
-    text-align: center;
-    gap: 40px;
-  }
-
-  .button-group {
     justify-content: center;
-  }
-  
-  .grid-container {
-    grid-template-columns: 1fr; /* تحويل شبكة الكتب لعمود واحد */
-  }
+    align-items: center;
+
+    gap: 5px;
 }
+
+.mobile-menu-button span {
+    display: block;
+
+    width: 23px;
+    height: 1px;
+
+    background: #d8c7a8;
+}
+
+
+/* ================================================================
+   HERO SECTION
+   ================================================================ */
+
+.hero-section {
+    position: relative;
+
+    width: 100%;
+    height: 421px;
+
+    overflow: visible;
+
+    background:
+        linear-gradient(
+            135deg,
+            #222a31 0%,
+            #202831 48%,
+            #171d24 100%
+        );
+}
+
+
+/*
+   إذا كان لديك texture خاص بالـHero:
+   فعّل هذا السطر واستبدل اسم الملف:
+
+   background-image:
+       linear-gradient(...),
+       url("assets/hero-texture.jpg");
+*/
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 20% 50%,
+            rgba(73,86,96,0.17),
+            transparent 55%
+        ),
+        radial-gradient(
+            ellipse at 80% 10%,
+            rgba(0,0,0,0.22),
+            transparent 55%
+        );
+}
+
+
+/* ================================================================
+   HERO GEOMETRIC SHAPE
+   ================================================================ */
+
+.hero-geometric-shape {
+    position: absolute;
+
+    top: 0;
+    right: 44%;
+
+    width: 62%;
+    height: 250px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #454646 0%,
+            #333638 50%,
+            #272b2c 100%
+        );
+
+    clip-path: polygon(
+        16% 0,
+        100% 0,
+        100% 70%,
+        78% 100%,
+        0 100%
+    );
+
+    opacity: 0.9;
+
+    border-left: 1px solid rgba(255,255,255,0.06);
+
+    pointer-events: none;
+}
+
+
+/* ================================================================
+   HERO INNER
+   ================================================================ */
+
+.hero-inner {
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+    height: 100%;
+
+    padding-right: 8%;
+    padding-left: 8%;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+}
+
+
+/* ================================================================
+   HERO TEXT
+   ================================================================ */
+
+.hero-text {
+    position: relative;
+
+    width: 52%;
+
+    padding-top: 91px;
+
+    padding-right: 3%;
+}
+
+.hero-description {
+    width: 500px;
+    max-width: 100%;
+
+    color: #e1d2b7;
+
+    font-size: 21px;
+    line-height: 1.95;
+
+    font-weight: 400;
+
+    text-align: right;
+
+    text-shadow:
+        0 1px 1px rgba(0,0,0,0.45);
+}
+
+.hero-description p {
+    margin: 0;
+}
+
+
+/* ================================================================
+   NOVEL BUTTON
+   ================================================================ */
+
+.novel-button {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 159px;
+    height: 48px;
+
+    margin-top: 24px;
+
+    color: #e5d5b6;
+
+    background:
+        linear-gradient(
+            180deg,
+            #7e211a 0%,
+            #631712 100%
+        );
+
+    border: 2px solid #9e7550;
+
+    box-shadow:
+        inset 0 0 0 2px rgba(38,14,10,0.7),
+        0 3px 7px rgba(0,0,0,0.25);
+
+    clip-path: polygon(
+        9px 0,
+        calc(100% - 9px) 0,
+        100% 9px,
+        100% calc(100% - 9px),
+        calc(100% - 9px) 100%,
+        9px 100%,
+        0 calc(100% - 9px),
+        0 9px
+    );
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+.novel-button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.novel-button-text {
+    font-size: 16px;
+    line-height: 1;
+}
+
+
+/* ================================================================
+   HERO BOOK
+   ================================================================ */
+
+.hero-book {
+    position: relative;
+
+    width: 300px;
+    height: 410px;
+
+    margin-top: 74px;
+    margin-left: 5%;
+
+    flex-shrink: 0;
+
+    z-index: 20;
+}
+
+
+/* ================================================================
+   BOOK SHADOW
+   ================================================================ */
+
+.hero-book-shadow {
+    position: absolute;
+
+    left: 50%;
+    bottom: -12px;
+
+    width: 270px;
+    height: 25px;
+
+    transform: translateX(-50%);
+
+    background: rgba(0,0,0,0.48);
+
+    filter: blur(13px);
+
+    border-radius: 50%;
+}
+
+
+/* ================================================================
+   BOOK FRAME
+   ================================================================ */
+
+.hero-book-frame {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 274px;
+    height: 393px;
+
+    transform: translateX(-50%);
+
+    padding: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9d7449 0%,
+            #e0bd8b 17%,
+            #805a39 35%,
+            #d6ae78 52%,
+            #8a613e 72%,
+            #d3aa76 100%
+        );
+
+    box-shadow:
+        0 9px 20px rgba(0,0,0,0.4),
+        0 2px 4px rgba(0,0,0,0.3);
+}
+
+
+/* ================================================================
+   BOOK INNER FRAME
+   ================================================================ */
+
+.hero-book-frame-inner {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 4px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5b4631,
+            #c59b69,
+            #5c4530
+        );
+}
+
+
+/* ================================================================
+   BOOK IMAGE
+   ================================================================ */
+
+.hero-book-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    background: #080808;
+
+    box-shadow:
+        inset 0 0 15px rgba(0,0,0,0.7);
+}
+
+
+/* ================================================================
+   NOVEL SECTION
+   ================================================================
+
+   هذه المنطقة غير ظاهرة في التصميم المرجعي،
+   لذلك نخفيها حتى لا تفصل الـHero عن "أعمال قادمة".
+   ================================================================ */
+
+.novel-section {
+    display: none;
+}
+
+
+/* ================================================================
+   UPCOMING SECTION
+   ================================================================ */
+
+.upcoming-section {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 373px;
+
+    background: #f7f6f3;
+
+    z-index: 4;
+
+    overflow: visible;
+}
+
+.upcoming-container {
+    position: relative;
+
+    width: 100%;
+
+    padding-top: 78px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ================================================================
+   UPCOMING TITLE
+   ================================================================ */
+
+.upcoming-heading {
+    position: relative;
+
+    z-index: 5;
+}
+
+.upcoming-title {
+    color: #46191a;
+
+    font-size: 34px;
+
+    font-weight: 400;
+
+    line-height: 1.3;
+
+    text-align: center;
+}
+
+
+/* ================================================================
+   BOOKSHELF
+   ================================================================ */
+
+.bookshelf {
+    position: relative;
+
+    width: 570px;
+    height: 213px;
+
+    margin-top: 34px;
+
+    z-index: 5;
+}
+
+
+/* ================================================================
+   BOOKS
+   ================================================================ */
+
+.upcoming-books {
+    position: absolute;
+
+    z-index: 4;
+
+    left: 50%;
+    top: 0;
+
+    width: 510px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.upcoming-book {
+    position: relative;
+
+    width: 104px;
+    height: 157px;
+
+    overflow: hidden;
+
+    background: #fff;
+
+    box-shadow:
+        2px 0 3px rgba(0,0,0,0.10),
+        -1px 0 2px rgba(0,0,0,0.08),
+        0 4px 8px rgba(0,0,0,0.08);
+}
+
+
+/* الكتاب الأول */
+
+.upcoming-book-1 {
+    transform: translateY(0);
+}
+
+
+/* الكتاب الثاني */
+
+.upcoming-book-2 {
+    transform: translateY(1px);
+}
+
+
+/* الكتاب الثالث */
+
+.upcoming-book-3 {
+    transform: translateY(0);
+}
+
+
+/* الكتاب الرابع */
+
+.upcoming-book-4 {
+    transform: translateY(1px);
+}
+
+
+/* ================================================================
+   BOOK COVERS
+   ================================================================ */
+
+.upcoming-book-cover {
+    width: 100%;
+    height: 100%;
+
+    background: #fafafa;
+
+    overflow: hidden;
+}
+
+.upcoming-book-cover img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+/* ================================================================
+   SHELF TOP
+   ================================================================ */
+
+.bookshelf-top {
+    position: absolute;
+
+    z-index: 5;
+
+    left: 50%;
+    bottom: 32px;
+
+    width: 570px;
+    height: 47px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            180deg,
+            #765d39 0%,
+            #5b4528 32%,
+            #7b613b 55%,
+            #4b3822 100%
+        );
+
+    box-shadow:
+        0 7px 9px rgba(0,0,0,0.22);
+}
+
+
+/* ================================================================
+   SHELF FRONT EDGE
+   ================================================================ */
+
+.bookshelf-front {
+    position: absolute;
+
+    z-index: 6;
+
+    left: 50%;
+    bottom: 32px;
+
+    width: 570px;
+    height: 47px;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(34,23,13,0.18),
+            transparent 15%,
+            rgba(244,207,144,0.15) 50%,
+            transparent 85%,
+            rgba(25,17,10,0.2)
+        );
+}
+
+
+/* ================================================================
+   SHELF SHADOW
+   ================================================================ */
+
+.bookshelf-shadow {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 50%;
+    bottom: 9px;
+
+    width: 610px;
+    height: 28px;
+
+    transform: translateX(-50%);
+
+    background: rgba(0,0,0,0.20);
+
+    filter: blur(13px);
+
+    border-radius: 50%;
+}
+
+
+/* ================================================================
+   ABOUT SECTION
+   ================================================================ */
+
+.about-section {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 533px;
+
+    overflow: visible;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f7f6f3 0%,
+            #f7f6f3 27%,
+            #1b2029 27%,
+            #151a22 100%
+        );
+
+    z-index: 3;
+}
+
+
+/*
+   يمكن استبدال الخلفية بتكستشر الرخام الموجود لديك:
+
+   .about-section {
+       background:
+           url("assets/marble.jpg") center / cover no-repeat;
+   }
+*/
+
+.about-background {
+    position: absolute;
+
+    top: 0;
+    right: 27%;
+
+    width: 73%;
+    height: 100%;
+
+    background:
+        radial-gradient(
+            ellipse at 75% 30%,
+            rgba(77,80,89,0.17),
+            transparent 40%
+        ),
+        linear-gradient(
+            130deg,
+            #20242c 0%,
+            #131821 50%,
+            #1d222b 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* ================================================================
+   MARBLE-LIKE LINES
+   ================================================================ */
+
+.about-background::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.22;
+
+    background:
+        linear-gradient(
+            112deg,
+            transparent 0 18%,
+            rgba(100,105,114,0.35) 19%,
+            transparent 21% 35%,
+            rgba(91,96,105,0.28) 36%,
+            transparent 39% 57%,
+            rgba(91,96,105,0.30) 58%,
+            transparent 61%
+        );
+}
+
+
+/* ================================================================
+   ABOUT CONTAINER
+   ================================================================ */
+
+.about-container {
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+    min-height: 533px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    direction: ltr;
+}
+
+
+/* ================================================================
+   AUTHOR PHOTO
+   ================================================================ */
+
+.author-photo-container {
+    position: absolute;
+
+    z-index: 20;
+
+    top: 55px;
+    left: 10%;
+
+    width: 338px;
+    height: 425px;
+
+    overflow: hidden;
+
+    background: #111;
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,0.25);
+}
+
+.author-photo-frame {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.author-photo {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    filter: grayscale(100%);
+}
+
+
+/* ================================================================
+   AUTHOR INFORMATION
+   ================================================================ */
+
+.author-information {
+    position: absolute;
+
+    z-index: 15;
+
+    top: 62px;
+    right: 8%;
+
+    width: 48%;
+
+    direction: rtl;
+
+    text-align: right;
+}
+
+
+/* ================================================================
+   AUTHOR NAME
+   ================================================================ */
+
+.author-name {
+    margin-bottom: 15px;
+
+    color: #e4c18c;
+
+    font-size: 55px;
+
+    line-height: 1.1;
+
+    font-weight: 400;
+
+    white-space: nowrap;
+
+    text-shadow:
+        0 1px 1px rgba(0,0,0,0.25);
+}
+
+
+/* ================================================================
+   AUTHOR BIO
+   ================================================================ */
+
+.author-bio {
+    color: #e2d0b2;
+
+    font-size: 21px;
+
+    line-height: 1.85;
+
+    font-weight: 400;
+}
+
+.author-bio p {
+    margin: 0;
+}
+
+
+/* ================================================================
+   HIDDEN EXTRA SECTIONS
+   ================================================================
+
+   الصورة المرجعية لا تحتوي هذه الأقسام في الصفحة المعروضة.
+   نخفيها مؤقتًا حتى لا تتغير المطابقة.
+   ================================================================ */
+
+.published-section,
+.articles-section,
+.news-section,
+.contact-section {
+    display: none;
+}
+
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+
+.footer {
+    position: relative;
+
+    z-index: 30;
+
+    width: 100%;
+    height: 130px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #191919 0%,
+            #171717 100%
+        );
+
+    color: #bcae96;
+}
+
+.footer-inner {
+    width: 100%;
+    height: 100%;
+
+    padding-top: 48px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* ================================================================
+   COPYRIGHT
+   ================================================================ */
+
+.footer-copyright {
+    color: #b9aa90;
+
+    font-size: 15px;
+
+    line-height: 1.4;
+
+    text-align: center;
+}
+
+
+/* ================================================================
+   FOOTER DECORATION
+   ================================================================ */
+
+.footer-decoration {
+    width: 265px;
+
+    margin-top: 13px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+}
+
+.footer-line {
+    display: block;
+
+    width: 110px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #8d806c
+        );
+}
+
+.footer-line-right {
+    background:
+        linear-gradient(
+            90deg,
+            #8d806c,
+            transparent
+    
