@@ -1,165 +1,659 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarah Vaughan</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>حسين أحمد</title>
+
+    <!-- CSS سيتم إضافته لاحقًا -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
+
 <body>
 
-  <!-- ================= 1. HEADER (القائمة العلوية) ================= -->
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="site-title">
-        <a href="/">Sarah Vaughan</a>
-      </div>
-      
-      <nav class="desktop-nav">
-        <!-- قسم الكتب يحتوي على قائمة منسدلة كما في الموقع الأصلي -->
-        <div class="nav-item has-dropdown">
-          <a href="/books">Books</a>
-          <div class="dropdown">
-            <a href="/anatomy">Anatomy Of A Scandal (TV)</a>
-            <a href="/little-disasters">Little Disasters (TV)</a>
-          </div>
-        </div>
-        <div class="nav-item"><a href="/about">About</a></div>
-        <div class="nav-item"><a href="/blog">Blog</a></div>
-        <div class="nav-item"><a href="/contact">Contact</a></div>
-      </nav>
+    <!-- =========================================================
+         الصفحة كاملة
+         ========================================================= -->
+    <div class="page">
 
-      <!-- زر القائمة للهواتف -->
-      <button class="mobile-menu-toggle" aria-label="Open Menu">
-        <span class="hamburger"></span>
-      </button>
+
+        <!-- =====================================================
+             NAVBAR
+             ===================================================== -->
+        <header class="navbar">
+
+            <div class="navbar-inner">
+
+
+                <!-- اسم الكاتب -->
+                <a href="#" class="site-logo">
+                    حسين احمد
+                </a>
+
+
+                <!-- روابط التنقل -->
+                <nav class="main-navigation" aria-label="التنقل الرئيسي">
+
+                    <ul class="navigation-list">
+
+                        <li class="navigation-item">
+                            <a href="#home" class="navigation-link">
+                                الصفحة الرئيسية
+                            </a>
+                        </li>
+
+
+                        <li class="navigation-item navigation-item-dropdown">
+
+                            <a
+                                href="#works"
+                                class="navigation-link navigation-dropdown-link"
+                            >
+                                الأعمال
+
+                                <span class="dropdown-icon" aria-hidden="true">
+                                    ﹀
+                                </span>
+                            </a>
+
+
+                            <!-- القائمة المنسدلة -->
+                            <div class="navigation-dropdown">
+
+                                <a href="#published" class="dropdown-item">
+                                    الأعمال المنشورة
+                                </a>
+
+                                <a href="#upcoming" class="dropdown-item">
+                                    أعمال قادمة
+                                </a>
+
+                            </div>
+
+                        </li>
+
+
+                        <li class="navigation-item">
+                            <a href="#about" class="navigation-link">
+                                حول حسين احمد
+                            </a>
+                        </li>
+
+
+                        <li class="navigation-item">
+                            <a href="#articles" class="navigation-link">
+                                مقالات
+                            </a>
+                        </li>
+
+
+                        <li class="navigation-item">
+                            <a href="#news" class="navigation-link">
+                                أخبار وعروض
+                            </a>
+                        </li>
+
+
+                        <li class="navigation-item">
+                            <a href="#contact" class="navigation-link">
+                                اتصال
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+
+                <!-- زر القائمة للموبايل -->
+                <button
+                    class="mobile-menu-button"
+                    type="button"
+                    aria-label="فتح القائمة"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+             MAIN
+             ===================================================== -->
+        <main>
+
+
+            <!-- =================================================
+                 HERO
+                 ================================================= -->
+            <section
+                id="home"
+                class="hero-section"
+            >
+
+                <!-- الطبقة الخلفية -->
+                <div
+                    class="hero-background"
+                    aria-hidden="true"
+                ></div>
+
+
+                <!-- الشكل الهندسي/المائل بالخلفية -->
+                <div
+                    class="hero-geometric-shape"
+                    aria-hidden="true"
+                ></div>
+
+
+                <div class="hero-inner">
+
+
+                    <!-- =========================================
+                         نص الـHero
+                         ========================================= -->
+                    <div class="hero-text">
+
+                        <div class="hero-description">
+
+                            <p>
+                                عقب رحيل شخصية سياسية مثيرة للجدل،
+                                إثر جراحة ناجحة.
+                            </p>
+
+                            <p>
+                                تتحول أورقة الشفاء إلى مسرح لتصفية
+                                الحسابات بين تقارير مخيفة وشائعات
+                                تصنع للإعلام وهمًا معدًا مسبقًا.
+                            </p>
+
+                            <p>
+                                يجد جراح بين جدران الملجأ يواجه عقوبة
+                                الإعدام لجريمة دولية
+                            </p>
+
+                        </div>
+
+
+                        <!-- زر نبذة الرواية -->
+                        <a
+                            href="#novel"
+                            class="novel-button"
+                        >
+                            <span class="novel-button-text">
+                                نبذة عن الرواية
+                            </span>
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         غلاف الرواية
+                         ========================================= -->
+                    <div class="hero-book">
+
+                        <!-- الظل -->
+                        <div
+                            class="hero-book-shadow"
+                            aria-hidden="true"
+                        ></div>
+
+
+                        <!-- الإطار الخارجي -->
+                        <div class="hero-book-frame">
+
+                            <!-- الإطار الداخلي -->
+                            <div class="hero-book-frame-inner">
+
+                                <img
+                                    src="assets/novel-cover.jpg"
+                                    alt="غلاف رواية إنعاش متهم"
+                                    class="hero-book-image"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 NOVEL INFORMATION
+                 ================================================= -->
+            <section
+                id="novel"
+                class="novel-section"
+            >
+
+                <div class="novel-container">
+
+                    <div class="novel-content">
+
+                        <h2 class="novel-title">
+                            إنعاش متهم
+                        </h2>
+
+                        <p class="novel-description">
+                            رواية حسين أحمد
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 UPCOMING WORKS
+                 ================================================= -->
+            <section
+                id="upcoming"
+                class="upcoming-section"
+            >
+
+                <div class="upcoming-container">
+
+
+                    <!-- عنوان القسم -->
+                    <div class="upcoming-heading">
+
+                        <h2 class="upcoming-title">
+                            أعمال قادمة
+                        </h2>
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         رف الكتب
+                         ========================================= -->
+                    <div class="bookshelf">
+
+
+                        <!-- الكتب -->
+                        <div class="upcoming-books">
+
+
+                            <!-- الكتاب الأول -->
+                            <article class="upcoming-book upcoming-book-1">
+
+                                <div class="upcoming-book-cover">
+
+                                    <img
+                                        src="assets/book-1.png"
+                                        alt="عمل قادم"
+                                    >
+
+                                </div>
+
+                            </article>
+
+
+                            <!-- الكتاب الثاني -->
+                            <article class="upcoming-book upcoming-book-2">
+
+                                <div class="upcoming-book-cover">
+
+                                    <img
+                                        src="assets/book-2.png"
+                                        alt="عمل قادم"
+                                    >
+
+                                </div>
+
+                            </article>
+
+
+                            <!-- الكتاب الثالث -->
+                            <article class="upcoming-book upcoming-book-3">
+
+                                <div class="upcoming-book-cover">
+
+                                    <img
+                                        src="assets/book-3.png"
+                                        alt="عمل قادم"
+                                    >
+
+                                </div>
+
+                            </article>
+
+
+                            <!-- الكتاب الرابع -->
+                            <article class="upcoming-book upcoming-book-4">
+
+                                <div class="upcoming-book-cover">
+
+                                    <img
+                                        src="assets/book-4.png"
+                                        alt="عمل قادم"
+                                    >
+
+                                </div>
+
+                            </article>
+
+
+                        </div>
+
+
+
+                        <!-- =====================================
+                             سطح الرف
+                             ===================================== -->
+                        <div
+                            class="bookshelf-top"
+                            aria-hidden="true"
+                        ></div>
+
+
+                        <!-- =====================================
+                             مقدمة الرف
+                             ===================================== -->
+                        <div
+                            class="bookshelf-front"
+                            aria-hidden="true"
+                        ></div>
+
+
+                        <!-- =====================================
+                             ظل الرف
+                             ===================================== -->
+                        <div
+                            class="bookshelf-shadow"
+                            aria-hidden="true"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ABOUT AUTHOR
+                 ================================================= -->
+            <section
+                id="about"
+                class="about-section"
+            >
+
+                <!-- الخلفية الرخامية -->
+                <div
+                    class="about-background"
+                    aria-hidden="true"
+                ></div>
+
+
+                <div class="about-container">
+
+
+                    <!-- =========================================
+                         صورة الكاتب
+                         ========================================= -->
+                    <div class="author-photo-container">
+
+                        <div class="author-photo-frame">
+
+                            <img
+                                src="assets/author.jpg"
+                                alt="حسين أحمد"
+                                class="author-photo"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         معلومات الكاتب
+                         ========================================= -->
+                    <div class="author-information">
+
+
+                        <!-- اسم الكاتب -->
+                        <h2 class="author-name">
+                            حسين أحمد
+                        </h2>
+
+
+                        <!-- الوصف -->
+                        <div class="author-bio">
+
+                            <p>
+                                كاتب عراقي ناشئ وطالب جامعي في قسم
+                                التمريض من بغداد.
+                            </p>
+
+
+                            <p>
+                                شخصيًا، أهوى أعمال الفنية القصصية ذات
+                                طابع سينمائي وملحمي مثير،
+                            </p>
+
+
+                            <p>
+                                حاليًا أقوم بتأليف أعمال قصصية
+                                روائية وأهتم بتطوير أسلوب سردي وتقديم
+                                وتقديم لون معاصر وجاد بالطرح.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PUBLISHED WORKS
+                 
+                 موجودة كبنية مستقبلية، ويمكن إظهارها لاحقًا
+                 ================================================= -->
+            <section
+                id="published"
+                class="published-section"
+            >
+
+                <div class="published-container">
+
+                    <h2 class="published-title">
+                        الأعمال المنشورة
+                    </h2>
+
+
+                    <div class="published-books">
+
+                        <article class="published-book">
+
+                            <img
+                                src="assets/novel-cover.jpg"
+                                alt="إنعاش متهم"
+                                class="published-book-image"
+                            >
+
+                            <div class="published-book-information">
+
+                                <h3 class="published-book-title">
+                                    إنعاش متهم
+                                </h3>
+
+                                <a
+                                    href="#novel"
+                                    class="published-book-link"
+                                >
+                                    قراءة المزيد
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ARTICLES
+                 ================================================= -->
+            <section
+                id="articles"
+                class="articles-section"
+            >
+
+                <div class="articles-container">
+
+                    <h2 class="articles-title">
+                        مقالات
+                    </h2>
+
+                    <div class="articles-grid">
+
+                        <!-- المقالات ستضاف لاحقًا -->
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 NEWS
+                 ================================================= -->
+            <section
+                id="news"
+                class="news-section"
+            >
+
+                <div class="news-container">
+
+                    <h2 class="news-title">
+                        أخبار وعروض
+                    </h2>
+
+                    <div class="news-grid">
+
+                        <!-- الأخبار ستضاف لاحقًا -->
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CONTACT
+                 ================================================= -->
+            <section
+                id="contact"
+                class="contact-section"
+            >
+
+                <div class="contact-container">
+
+                    <h2 class="contact-title">
+                        اتصال
+                    </h2>
+
+                    <div class="contact-content">
+
+                        <!-- معلومات التواصل ستضاف لاحقًا -->
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- =====================================================
+             FOOTER
+             ===================================================== -->
+        <footer class="footer">
+
+            <div class="footer-inner">
+
+
+                <!-- حقوق النشر -->
+                <p class="footer-copyright">
+                    حسين احمد © 2026
+                </p>
+
+
+                <!-- =============================================
+                     الخط الزخرفي
+                     ============================================= -->
+                <div
+                    class="footer-decoration"
+                    aria-hidden="true"
+                >
+
+                    <span class="footer-line footer-line-left"></span>
+
+                    <span class="footer-symbol">
+                        ❖
+                    </span>
+
+                    <span class="footer-line footer-line-right"></span>
+
+                </div>
+
+
+            </div>
+
+        </footer>
+
+
     </div>
-  </header>
 
-  <!-- ================= MAIN CONTENT (محتوى الصفحة الرئيسي) ================= -->
-  <main class="site-main">
 
-    <!-- Section 1: Hero / New Book (القسم الأول: الإصدار الجديد) -->
-    <section class="hero-section text-center">
-      <div class="content-wrapper">
-        <p class="release-date">OUT 27 AUGUST 2026</p>
-        
-        <blockquote class="review-quote">
-          “Expertly plotted and crackling with tension, this is dysfunctional family psychodrama at its unputdownable best.” <br>
-          <cite>— GUARDIAN</cite>
-        </blockquote>
-        
-        <p class="book-description">The compelling new novel about power, money and lies from the author of Anatomy of a Scandal.</p>
-        
-        <a href="/learn-more" class="link-arrow">Learn More ⟶</a>
-        
-        <div class="button-group">
-          <a href="/order" class="btn primary-btn">ORDER NOW</a>
-        </div>
-      </div>
-    </section>
 
-    <!-- Section 2: Little Disasters Series (قسم مسلسل الكوارث الصغيرة) -->
-    <section class="feature-section split-layout">
-      <div class="content-wrapper">
-        <div class="text-content">
-          <p class="tagline">now A six-part series on paramount+</p>
-          <h2 class="section-title">little disasters</h2>
-          <p>Based on the bestselling novel by Sarah Vaughan, Little Disasters is a psychological thriller with a mystery at its heart about motherhood and judgment. From the multi BAFTA award-winning production company, Roughcut TV, this six-part series stars Diane Kruger, Jo Joyner, JJ Feild, Shelley Conn, Emily Taaffe, Stephen Campbell Moore, Ben Bailey Smith and Patrick Baladi.</p>
-          <div class="button-group">
-            <a href="/buy" class="btn outline-btn">Buy The Book</a>
-            <a href="/watch" class="btn outline-btn">Watch On Paramount+</a>
-          </div>
-        </div>
-        <div class="image-content">
-          <!-- ضع رابط صورة غلاف المسلسل هنا -->
-          <img src="images/little-disasters-tv.jpg" alt="Little Disasters Series">
-        </div>
-      </div>
-    </section>
+    <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
 
-    <!-- Section 3: Anatomy of a Scandal Series (قسم مسلسل تشريح فضيحة) -->
-    <section class="feature-section split-layout reverse">
-      <div class="content-wrapper">
-        <div class="text-content">
-          <p class="tagline">now a global #1 series on netflix</p>
-          <h2 class="section-title">ANATOMY OF A SCANDAL</h2>
-          <p>Sophie's privileged life as the wife of powerful politician James unravels when scandalous secrets surface — and he stands accused of a shocking crime.</p>
-          <p>Based on the hit novel by Sarah Vaughan, the exhilarating new series stars Sienna Miller, Rupert Friend, Michelle Dockery and Naomi Scott.</p>
-          <div class="button-group">
-            <a href="/buy" class="btn outline-btn">Buy The Book</a>
-            <a href="/watch" class="btn outline-btn">Watch On Netflix</a>
-          </div>
-        </div>
-        <div class="image-content">
-          <!-- ضع رابط صورة غلاف نتفلكس هنا -->
-          <img src="images/anatomy-tv.jpg" alt="Anatomy of a Scandal Series">
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 4: About Author (قسم عن الكاتبة) -->
-    <section class="about-section split-layout">
-      <div class="content-wrapper">
-        <div class="image-content author-photo">
-          <img src="images/sarah-vaughan.jpg" alt="Sarah Vaughan Photo by Cat Morley">
-          <span class="photo-credit">Photo by Cat Morley</span>
-        </div>
-        <div class="text-content">
-          <h2 class="section-title">ABOUT SARAH VAUGHAN</h2>
-          <p>Sarah Vaughan is a Sunday Times and international best-selling author. Before writing fiction, Sarah spent 15 years as a journalist, including 11 at the Guardian as a political correspondent and news reporter: great preparation for thrillers exploring power, privilege and misogyny, and incorporating police investigations and criminal trials.</p>
-          <a href="/about" class="link-arrow">Learn More ⟶</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 5: Book Grid / Explore (قسم شبكة الكتب) -->
-    <section class="books-grid-section">
-      <div class="content-wrapper">
-        <h2 class="section-title text-center">EXPLORE TITLES BY SARAH VAUGHAN</h2>
-        
-        <div class="grid-container">
-          
-          <!-- كتاب 1 -->
-          <div class="grid-item">
-            <img src="images/reputation.jpg" alt="Reputation Book Cover">
-            <h3>REPUTATION</h3>
-            <a href="/order" class="btn text-btn">ORDER NOW</a>
-          </div>
-
-          <!-- كتاب 2 -->
-          <div class="grid-item">
-            <img src="images/little-disasters-book.jpg" alt="Little Disasters Book Cover">
-            <h3>LITTLE DISASTERS</h3>
-            <a href="/order" class="btn text-btn">Order Now</a>
-          </div>
-
-          <!-- كتاب 3 -->
-          <div class="grid-item">
-            <img src="images/anatomy-book.jpg" alt="Anatomy of a Scandal Book Cover">
-            <h3>ANATOMY OF A SCANDAL</h3>
-            <a href="/order" class="btn text-btn">Order Now</a>
-          </div>
-
-          <!-- كتاب 4 -->
-          <div class="grid-item">
-            <img src="images/earlier-titles.jpg" alt="Earlier Titles">
-            <h3>EARLIER TITLES</h3>
-            <a href="/books" class="btn text-btn">View Titles</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ================= FOOTER (تذييل الموقع) ================= -->
-  <footer class="site-footer">
-    <div class="footer-inner text-center">
-      <p>© 2026 Sarah Vaughan. All Rights Reserved</p>
-    </div>
-  </footer>
+    <!--
+    <script src="script.js"></script>
+    -->
 
 </body>
+
 </html>
