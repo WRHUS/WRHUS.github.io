@@ -1,1188 +1,357 @@
-/* ================================================================
-   RESET
-   ================================================================ */
+/* ============================================
+   خطوط جوجل: Aref Ruqaa للعناوين/الزخرفة + Tajawal للنصوص
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ============================================
+   المتغيرات العامة (نظام الألوان والخطوط)
+   ============================================ */
+:root {
+    --navy-dark: #12141d;
+    --navy-panel: #171b28;
+    --navy-diagonal: #212a40;
+    --gold: #c9a35f;
+    --gold-light: #e3c789;
+    --maroon: #742630;
+    --maroon-dark: #591c24;
+    --cream: #ede6d6;
+    --white: #ffffff;
+    --off-white: #faf9f6;
+    --text-muted: rgba(237, 230, 214, 0.75);
+
+    --font-display: 'Aref Ruqaa', serif;
+    --font-body: 'Tajawal', sans-serif;
+
+    --container: 1240px;
+    --section-padding-x: clamp(24px, 6vw, 80px);
 }
 
-html {
-    scroll-behavior: smooth;
-}
+/* ============================================
+   إعادة ضبط أساسية
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-    direction: rtl;
-    overflow-x: hidden;
-    background: #f7f6f3;
-    color: #222;
-    font-family: "Amiri", "Noto Naskh Arabic", "Tahoma", serif;
+    margin: 0;
+    font-family: var(--font-body);
+    background: var(--off-white);
+    color: var(--cream);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+ul { list-style: none; margin: 0; padding: 0; }
+
+h1, h2 { margin: 0; }
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 3px;
 }
 
-img {
-    display: block;
-    max-width: 100%;
+@media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
 }
 
-button {
-    font-family: inherit;
-}
-
-
-/* ================================================================
-   VARIABLES
-   ================================================================ */
-
-:root {
-
-    --black: #171717;
-    --navbar-black: #191919;
-
-    --cream: #e5d2ae;
-    --gold: #c9a36a;
-    --gold-light: #e3c38e;
-
-    --dark-blue: #202831;
-    --dark-blue-2: #1b232c;
-
-    --marble: #161b23;
-
-    --white-section: #f7f6f3;
-
-    --red: #721d17;
-    --red-dark: #4e100d;
-
-    --max-width: 1200px;
-}
-
-
-/* ================================================================
-   PAGE
-   ================================================================ */
-
-.page {
-    width: 100%;
-    min-height: 100vh;
-    overflow: hidden;
-}
-
-
-/* ================================================================
-   NAVBAR
-   ================================================================ */
-
-.navbar {
-    position: relative;
-    z-index: 1000;
-
-    width: 100%;
-    height: 80px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #1c1c1c 0%,
-            #171717 100%
-        );
-
-    border-bottom: 1px solid rgba(255,255,255,0.025);
-
-    color: #d7c6a6;
-}
-
-.navbar-inner {
-    position: relative;
-
-    width: 100%;
-    height: 100%;
-
-    padding: 0 45px;
-
+/* ============================================
+   الهيدر
+   ============================================ */
+.site-header {
     display: flex;
+    flex-direction: row-reverse; /* الشعار يسار، القائمة يمين، كما في التصميم */
     align-items: center;
     justify-content: space-between;
+    padding: 22px var(--section-padding-x);
+    background: var(--navy-dark);
 }
 
-
-/* ================================================================
-   LOGO
-   ================================================================ */
-
-.site-logo {
-    direction: rtl;
-
-    font-size: 30px;
-    line-height: 1;
-
-    color: #d8c7a8;
-
-    font-weight: 400;
-
-    white-space: nowrap;
-
-    transition: opacity 0.3s ease;
+.logo h1 {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 700;
 }
 
-.site-logo:hover {
-    opacity: 0.8;
+.logo a {
+    color: var(--gold-light);
+    letter-spacing: 0.5px;
 }
 
-
-/* ================================================================
-   NAVIGATION
-   ================================================================ */
-
-.main-navigation {
-    height: 100%;
-}
-
-.navigation-list {
-    list-style: none;
-
-    height: 100%;
-
+.nav-list {
     display: flex;
     align-items: center;
-
-    gap: 26px;
+    gap: 34px;
 }
 
-.navigation-item {
-    position: relative;
-
-    height: 100%;
-
-    display: flex;
+.nav-item a {
+    display: inline-flex;
     align-items: center;
-}
-
-.navigation-link {
-    position: relative;
-
-    display: flex;
-    align-items: center;
-    gap: 7px;
-
-    height: 100%;
-
-    color: #cdbd9e;
-
+    gap: 4px;
     font-size: 15px;
-    font-weight: 400;
-
-    white-space: nowrap;
-
-    transition:
-        color 0.25s ease,
-        opacity 0.25s ease;
+    color: var(--text-muted);
+    transition: color 0.2s ease;
 }
 
-.navigation-link:hover {
-    color: #e8d6b2;
-}
+.nav-item a:hover { color: var(--gold-light); }
 
-.navigation-link.active {
-    color: #d9c6a2;
-}
+.dropdown-arrow { font-size: 12px; }
 
-
-/* ================================================================
-   DROPDOWN
-   ================================================================ */
-
-.dropdown-icon {
+/* ============================================
+   قسم الهيرو (الرواية الحالية)
+   ============================================ */
+.hero {
     position: relative;
-
-    top: -2px;
-
-    font-size: 15px;
-
-    opacity: 0.85;
+    overflow: hidden;
+    background: var(--navy-dark);
 }
 
-.navigation-dropdown {
-    position: absolute;
-
-    top: 74px;
-    right: 0;
-
-    min-width: 180px;
-
-    padding: 8px 0;
-
-    background: #1b1b1b;
-
-    border: 1px solid rgba(201,163,106,0.18);
-
-    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-
-    opacity: 0;
-    visibility: hidden;
-
-    transform: translateY(-7px);
-
-    transition:
-        opacity 0.25s ease,
-        visibility 0.25s ease,
-        transform 0.25s ease;
-}
-
-.navigation-item-dropdown:hover .navigation-dropdown {
-    opacity: 1;
-    visibility: visible;
-
-    transform: translateY(0);
-}
-
-.dropdown-item {
-    display: block;
-
-    padding: 10px 18px;
-
-    color: #d2c0a0;
-
-    font-size: 14px;
-
-    transition: background 0.2s ease;
-}
-
-.dropdown-item:hover {
-    background: rgba(255,255,255,0.05);
-}
-
-
-/* ================================================================
-   MOBILE BUTTON
-   ================================================================ */
-
-.mobile-menu-button {
-    display: none;
-
-    width: 38px;
-    height: 38px;
-
-    border: 0;
-    background: transparent;
-
-    cursor: pointer;
-
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    gap: 5px;
-}
-
-.mobile-menu-button span {
-    display: block;
-
-    width: 23px;
-    height: 1px;
-
-    background: #d8c7a8;
-}
-
-
-/* ================================================================
-   HERO SECTION
-   ================================================================ */
-
-.hero-section {
-    position: relative;
-
-    width: 100%;
-    height: 421px;
-
-    overflow: visible;
-
-    background:
-        linear-gradient(
-            135deg,
-            #222a31 0%,
-            #202831 48%,
-            #171d24 100%
-        );
-}
-
-
-/*
-   إذا كان لديك texture خاص بالـHero:
-   فعّل هذا السطر واستبدل اسم الملف:
-
-   background-image:
-       linear-gradient(...),
-       url("assets/hero-texture.jpg");
-*/
-
-.hero-background {
+.hero::before {
+    content: '';
     position: absolute;
     inset: 0;
-
-    pointer-events: none;
-
-    background:
-        radial-gradient(
-            ellipse at 20% 50%,
-            rgba(73,86,96,0.17),
-            transparent 55%
-        ),
-        radial-gradient(
-            ellipse at 80% 10%,
-            rgba(0,0,0,0.22),
-            transparent 55%
-        );
+    background: var(--navy-diagonal);
+    clip-path: polygon(58% 0, 100% 0, 100% 100%, 40% 100%);
+    z-index: 0;
 }
-
-
-/* ================================================================
-   HERO GEOMETRIC SHAPE
-   ================================================================ */
-
-.hero-geometric-shape {
-    position: absolute;
-
-    top: 0;
-    right: 44%;
-
-    width: 62%;
-    height: 250px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #454646 0%,
-            #333638 50%,
-            #272b2c 100%
-        );
-
-    clip-path: polygon(
-        16% 0,
-        100% 0,
-        100% 70%,
-        78% 100%,
-        0 100%
-    );
-
-    opacity: 0.9;
-
-    border-left: 1px solid rgba(255,255,255,0.06);
-
-    pointer-events: none;
-}
-
-
-/* ================================================================
-   HERO INNER
-   ================================================================ */
 
 .hero-inner {
     position: relative;
-    z-index: 5;
-
-    width: 100%;
-    height: 100%;
-
-    padding-right: 8%;
-    padding-left: 8%;
-
+    z-index: 1;
     display: flex;
-
-    align-items: flex-start;
-
+    flex-direction: row-reverse; /* النص يسار، غلاف الكتاب يمين */
+    align-items: center;
     justify-content: space-between;
+    gap: 40px;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 90px var(--section-padding-x) 110px;
 }
 
-
-/* ================================================================
-   HERO TEXT
-   ================================================================ */
-
-.hero-text {
-    position: relative;
-
-    width: 52%;
-
-    padding-top: 91px;
-
-    padding-right: 3%;
+.hero-text-side {
+    flex: 1 1 420px;
+    max-width: 480px;
 }
 
 .hero-description {
-    width: 500px;
-    max-width: 100%;
-
-    color: #e1d2b7;
-
-    font-size: 21px;
-    line-height: 1.95;
-
-    font-weight: 400;
-
-    text-align: right;
-
-    text-shadow:
-        0 1px 1px rgba(0,0,0,0.45);
+    font-size: 17px;
+    line-height: 2;
+    color: var(--cream);
+    margin: 0 0 34px;
 }
 
-.hero-description p {
-    margin: 0;
+.btn {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 14px 34px;
+    border-radius: 6px;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
-
-/* ================================================================
-   NOVEL BUTTON
-   ================================================================ */
-
-.novel-button {
-    position: relative;
-
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 159px;
-    height: 48px;
-
-    margin-top: 24px;
-
-    color: #e5d5b6;
-
-    background:
-        linear-gradient(
-            180deg,
-            #7e211a 0%,
-            #631712 100%
-        );
-
-    border: 2px solid #9e7550;
-
-    box-shadow:
-        inset 0 0 0 2px rgba(38,14,10,0.7),
-        0 3px 7px rgba(0,0,0,0.25);
-
-    clip-path: polygon(
-        9px 0,
-        calc(100% - 9px) 0,
-        100% 9px,
-        100% calc(100% - 9px),
-        calc(100% - 9px) 100%,
-        9px 100%,
-        0 calc(100% - 9px),
-        0 9px
-    );
-
-    transition:
-        transform 0.25s ease,
-        filter 0.25s ease;
+.btn-primary {
+    background: var(--maroon);
+    color: var(--cream);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
 }
 
-.novel-button:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.1);
+.btn-primary:hover {
+    background: var(--maroon-dark);
+    transform: translateY(-1px);
 }
 
-.novel-button-text {
-    font-size: 16px;
-    line-height: 1;
+.hero-image-side { flex: 0 0 auto; }
+
+.book-frame {
+    padding: 14px;
+    background: linear-gradient(160deg, var(--gold-light), var(--gold) 55%, #8a6a35);
+    border-radius: 4px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.45);
 }
 
-
-/* ================================================================
-   HERO BOOK
-   ================================================================ */
-
-.hero-book {
-    position: relative;
-
-    width: 300px;
-    height: 410px;
-
-    margin-top: 74px;
-    margin-left: 5%;
-
-    flex-shrink: 0;
-
-    z-index: 20;
+.book-cover-img {
+    width: 260px;
+    height: auto;
+    border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-
-/* ================================================================
-   BOOK SHADOW
-   ================================================================ */
-
-.hero-book-shadow {
-    position: absolute;
-
-    left: 50%;
-    bottom: -12px;
-
-    width: 270px;
-    height: 25px;
-
-    transform: translateX(-50%);
-
-    background: rgba(0,0,0,0.48);
-
-    filter: blur(13px);
-
-    border-radius: 50%;
+/* ============================================
+   قسم أعمال قادمة
+   ============================================ */
+.upcoming-works {
+    background: var(--white);
+    text-align: center;
+    padding: 90px var(--section-padding-x) 110px;
 }
 
-
-/* ================================================================
-   BOOK FRAME
-   ================================================================ */
-
-.hero-book-frame {
-    position: absolute;
-
-    top: 0;
-    left: 50%;
-
-    width: 274px;
-    height: 393px;
-
-    transform: translateX(-50%);
-
-    padding: 8px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #9d7449 0%,
-            #e0bd8b 17%,
-            #805a39 35%,
-            #d6ae78 52%,
-            #8a613e 72%,
-            #d3aa76 100%
-        );
-
-    box-shadow:
-        0 9px 20px rgba(0,0,0,0.4),
-        0 2px 4px rgba(0,0,0,0.3);
+.section-title {
+    font-family: var(--font-display);
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--maroon);
+    margin-bottom: 60px;
 }
 
-
-/* ================================================================
-   BOOK INNER FRAME
-   ================================================================ */
-
-.hero-book-frame-inner {
-    position: relative;
-
-    width: 100%;
-    height: 100%;
-
-    padding: 4px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #5b4631,
-            #c59b69,
-            #5c4530
-        );
-}
-
-
-/* ================================================================
-   BOOK IMAGE
-   ================================================================ */
-
-.hero-book-image {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    object-position: center;
-
-    background: #080808;
-
-    box-shadow:
-        inset 0 0 15px rgba(0,0,0,0.7);
-}
-
-
-/* ================================================================
-   NOVEL SECTION
-   ================================================================
-
-   هذه المنطقة غير ظاهرة في التصميم المرجعي،
-   لذلك نخفيها حتى لا تفصل الـHero عن "أعمال قادمة".
-   ================================================================ */
-
-.novel-section {
-    display: none;
-}
-
-
-/* ================================================================
-   UPCOMING SECTION
-   ================================================================ */
-
-.upcoming-section {
-    position: relative;
-
-    width: 100%;
-
-    min-height: 373px;
-
-    background: #f7f6f3;
-
-    z-index: 4;
-
-    overflow: visible;
-}
-
-.upcoming-container {
-    position: relative;
-
-    width: 100%;
-
-    padding-top: 78px;
-
+.bookshelf {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 640px;
+    margin: 0 auto;
 }
 
-
-/* ================================================================
-   UPCOMING TITLE
-   ================================================================ */
-
-.upcoming-heading {
-    position: relative;
-
-    z-index: 5;
-}
-
-.upcoming-title {
-    color: #46191a;
-
-    font-size: 34px;
-
-    font-weight: 400;
-
-    line-height: 1.3;
-
-    text-align: center;
-}
-
-
-/* ================================================================
-   BOOKSHELF
-   ================================================================ */
-
-.bookshelf {
-    position: relative;
-
-    width: 570px;
-    height: 213px;
-
-    margin-top: 34px;
-
-    z-index: 5;
-}
-
-
-/* ================================================================
-   BOOKS
-   ================================================================ */
-
-.upcoming-books {
-    position: absolute;
-
-    z-index: 4;
-
-    left: 50%;
-    top: 0;
-
-    width: 510px;
-
-    transform: translateX(-50%);
-
+.shelf-books {
     display: flex;
-
-    align-items: flex-start;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 26px;
+    width: 100%;
+    z-index: 1;
 }
 
-.upcoming-book {
-    position: relative;
-
-    width: 104px;
-    height: 157px;
-
-    overflow: hidden;
-
-    background: #fff;
-
+.book-slot {
+    width: 110px;
+    height: 150px;
+    background: var(--white);
+    border-radius: 2px;
     box-shadow:
-        2px 0 3px rgba(0,0,0,0.10),
-        -1px 0 2px rgba(0,0,0,0.08),
-        0 4px 8px rgba(0,0,0,0.08);
+        0 14px 24px rgba(0, 0, 0, 0.18),
+        inset -1px 0 0 rgba(0, 0, 0, 0.06);
 }
 
-
-/* الكتاب الأول */
-
-.upcoming-book-1 {
-    transform: translateY(0);
-}
-
-
-/* الكتاب الثاني */
-
-.upcoming-book-2 {
-    transform: translateY(1px);
-}
-
-
-/* الكتاب الثالث */
-
-.upcoming-book-3 {
-    transform: translateY(0);
-}
-
-
-/* الكتاب الرابع */
-
-.upcoming-book-4 {
-    transform: translateY(1px);
-}
-
-
-/* ================================================================
-   BOOK COVERS
-   ================================================================ */
-
-.upcoming-book-cover {
+.shelf-base {
     width: 100%;
-    height: 100%;
-
-    background: #fafafa;
-
-    overflow: hidden;
+    height: 22px;
+    margin-top: -2px;
+    background: linear-gradient(180deg, #c9a35f, #8a6a35);
+    box-shadow: 0 16px 24px rgba(0, 0, 0, 0.25);
 }
 
-.upcoming-book-cover img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    object-position: center;
-}
-
-
-/* ================================================================
-   SHELF TOP
-   ================================================================ */
-
-.bookshelf-top {
-    position: absolute;
-
-    z-index: 5;
-
-    left: 50%;
-    bottom: 32px;
-
-    width: 570px;
-    height: 47px;
-
-    transform: translateX(-50%);
-
-    background:
-        linear-gradient(
-            180deg,
-            #765d39 0%,
-            #5b4528 32%,
-            #7b613b 55%,
-            #4b3822 100%
-        );
-
-    box-shadow:
-        0 7px 9px rgba(0,0,0,0.22);
-}
-
-
-/* ================================================================
-   SHELF FRONT EDGE
-   ================================================================ */
-
-.bookshelf-front {
-    position: absolute;
-
-    z-index: 6;
-
-    left: 50%;
-    bottom: 32px;
-
-    width: 570px;
-    height: 47px;
-
-    transform: translateX(-50%);
-
-    pointer-events: none;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(34,23,13,0.18),
-            transparent 15%,
-            rgba(244,207,144,0.15) 50%,
-            transparent 85%,
-            rgba(25,17,10,0.2)
-        );
-}
-
-
-/* ================================================================
-   SHELF SHADOW
-   ================================================================ */
-
-.bookshelf-shadow {
-    position: absolute;
-
-    z-index: 2;
-
-    left: 50%;
-    bottom: 9px;
-
-    width: 610px;
-    height: 28px;
-
-    transform: translateX(-50%);
-
-    background: rgba(0,0,0,0.20);
-
-    filter: blur(13px);
-
-    border-radius: 50%;
-}
-
-
-/* ================================================================
-   ABOUT SECTION
-   ================================================================ */
-
-.about-section {
-    position: relative;
-
-    width: 100%;
-
-    min-height: 533px;
-
-    overflow: visible;
-
-    background:
-        linear-gradient(
-            90deg,
-            #f7f6f3 0%,
-            #f7f6f3 27%,
-            #1b2029 27%,
-            #151a22 100%
-        );
-
-    z-index: 3;
-}
-
-
-/*
-   يمكن استبدال الخلفية بتكستشر الرخام الموجود لديك:
-
-   .about-section {
-       background:
-           url("assets/marble.jpg") center / cover no-repeat;
-   }
-*/
-
-.about-background {
-    position: absolute;
-
-    top: 0;
-    right: 27%;
-
-    width: 73%;
-    height: 100%;
-
-    background:
-        radial-gradient(
-            ellipse at 75% 30%,
-            rgba(77,80,89,0.17),
-            transparent 40%
-        ),
-        linear-gradient(
-            130deg,
-            #20242c 0%,
-            #131821 50%,
-            #1d222b 100%
-        );
-
-    pointer-events: none;
-}
-
-
-/* ================================================================
-   MARBLE-LIKE LINES
-   ================================================================ */
-
-.about-background::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    opacity: 0.22;
-
-    background:
-        linear-gradient(
-            112deg,
-            transparent 0 18%,
-            rgba(100,105,114,0.35) 19%,
-            transparent 21% 35%,
-            rgba(91,96,105,0.28) 36%,
-            transparent 39% 57%,
-            rgba(91,96,105,0.30) 58%,
-            transparent 61%
-        );
-}
-
-
-/* ================================================================
-   ABOUT CONTAINER
-   ================================================================ */
-
-.about-container {
-    position: relative;
-
-    z-index: 10;
-
-    width: 100%;
-    min-height: 533px;
-
+/* ============================================
+   قسم عن الكاتب
+   ============================================ */
+.about-author {
     display: flex;
-
-    align-items: flex-start;
-
-    direction: ltr;
-}
-
-
-/* ================================================================
-   AUTHOR PHOTO
-   ================================================================ */
-
-.author-photo-container {
-    position: absolute;
-
-    z-index: 20;
-
-    top: 55px;
-    left: 10%;
-
-    width: 338px;
-    height: 425px;
-
-    overflow: hidden;
-
-    background: #111;
-
-    box-shadow:
-        0 8px 18px rgba(0,0,0,0.25);
-}
-
-.author-photo-frame {
-    width: 100%;
-    height: 100%;
-
-    overflow: hidden;
+    flex-direction: row-reverse; /* الصورة يسار، النص يمين */
+    align-items: stretch;
+    background: var(--navy-panel);
 }
 
 .author-photo {
+    flex: 0 0 42%;
+    min-height: 480px;
+}
+
+.author-photo img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
-    object-position: center;
-
     filter: grayscale(100%);
 }
 
-
-/* ================================================================
-   AUTHOR INFORMATION
-   ================================================================ */
-
-.author-information {
-    position: absolute;
-
-    z-index: 15;
-
-    top: 62px;
-    right: 8%;
-
-    width: 48%;
-
-    direction: rtl;
-
-    text-align: right;
+.author-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px var(--section-padding-x);
 }
-
-
-/* ================================================================
-   AUTHOR NAME
-   ================================================================ */
 
 .author-name {
-    margin-bottom: 15px;
-
-    color: #e4c18c;
-
-    font-size: 55px;
-
-    line-height: 1.1;
-
-    font-weight: 400;
-
-    white-space: nowrap;
-
-    text-shadow:
-        0 1px 1px rgba(0,0,0,0.25);
+    font-family: var(--font-display);
+    font-size: clamp(48px, 6vw, 72px);
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 26px;
 }
-
-
-/* ================================================================
-   AUTHOR BIO
-   ================================================================ */
 
 .author-bio {
-    color: #e2d0b2;
-
-    font-size: 21px;
-
-    line-height: 1.85;
-
-    font-weight: 400;
-}
-
-.author-bio p {
+    font-size: 16px;
+    line-height: 2.1;
+    color: var(--text-muted);
+    max-width: 46ch;
     margin: 0;
 }
 
-
-/* ================================================================
-   HIDDEN EXTRA SECTIONS
-   ================================================================
-
-   الصورة المرجعية لا تحتوي هذه الأقسام في الصفحة المعروضة.
-   نخفيها مؤقتًا حتى لا تتغير المطابقة.
-   ================================================================ */
-
-.published-section,
-.articles-section,
-.news-section,
-.contact-section {
-    display: none;
-}
-
-
-/* ================================================================
-   FOOTER
-   ================================================================ */
-
-.footer {
-    position: relative;
-
-    z-index: 30;
-
-    width: 100%;
-    height: 130px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #191919 0%,
-            #171717 100%
-        );
-
-    color: #bcae96;
-}
-
-.footer-inner {
-    width: 100%;
-    height: 100%;
-
-    padding-top: 48px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-}
-
-
-/* ================================================================
-   COPYRIGHT
-   ================================================================ */
-
-.footer-copyright {
-    color: #b9aa90;
-
-    font-size: 15px;
-
-    line-height: 1.4;
-
+/* ============================================
+   الفوتر
+   ============================================ */
+.site-footer {
+    background: var(--navy-dark);
     text-align: center;
+    padding: 46px var(--section-padding-x) 40px;
 }
 
-
-/* ================================================================
-   FOOTER DECORATION
-   ================================================================ */
-
-.footer-decoration {
-    width: 265px;
-
-    margin-top: 13px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 12px;
-}
-
-.footer-line {
-    display: block;
-
-    width: 110px;
+.footer-divider {
+    width: 220px;
     height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #8d806c
-        );
+    margin: 0 auto 22px;
+    background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
+    opacity: 0.6;
 }
 
-.footer-line-right {
-    background:
-        linear-gradient(
-            90deg,
-            #8d806c,
-            transparent
-    
+.footer-text {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin: 0 0 14px;
+}
+
+.footer-ornament {
+    color: var(--gold);
+    font-size: 16px;
+}
+
+/* ============================================
+   استجابة الأجهزة الصغيرة
+   ============================================ */
+@media (max-width: 900px) {
+    .hero-inner,
+    .about-author {
+        flex-direction: column;
+    }
+
+    .hero-inner {
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-text-side,
+    .hero-image-side {
+        max-width: 100%;
+    }
+
+    .author-photo {
+        width: 100%;
+        min-height: 320px;
+    }
+
+    .author-info {
+        text-align: center;
+        align-items: center;
+        padding: 50px var(--section-padding-x);
+    }
+}
+
+@media (max-width: 700px) {
+    .site-header {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px 24px;
+    }
+
+    .book-slot { width: 70px; height: 100px; }
+
+    .shelf-books { gap: 14px; }
+}
